@@ -2,14 +2,15 @@ User.destroy_all
 Card.destroy_all
 CardUser.destroy_all
 
-
 power9 = ["Black Lotus", "Time Walk", "Ancestral Recall", "Mox Sapphire", "Mox Jet", "Mox Ruby", "Mox Pearl", "Mox Emerald", "Timetwister"]
+power9_image = ["Image.ashx.jpeg", "Image.ashx-2.jpeg", "Image.ashx-3.jpeg", "Image.ashx-4.jpeg", "Image.ashx-5.jpeg", "Image.ashx-6.jpeg", "Image.ashx-7.jpeg", "Image.ashx-8.jpeg", "Image.ashx-9.jpeg"]
 
 power9.each do |power|
   card = Card.create(
     name: power,
     price: 1,
-    ref_time: 23.years.ago
+    ref_time: 23.years.ago,
+    url: power9_image.shift
   )
 end
 
@@ -37,7 +38,7 @@ user = User.all
 alert = Alert.create(
   user_id: user.sample.id,
   title: "title",
-  text: "stuff n junk",
-  )
+  text: "stuff n junk"
+)
 
 puts "It's working!"

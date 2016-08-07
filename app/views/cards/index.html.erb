@@ -7,6 +7,8 @@
 <% @card_users.each do |card_user| %>
   <h3> <%= card_user.card.name %> </h3>
   <h4>card quantity: <%= card_user.quantity %> </h4>
+  <h4>card price: <%= number_to_currency(card_user.card.price) %></h4>
+  <h4>total value: <%= number_to_currency(card_user.total_value) %></h4>
   <%= image_tag card_user.card.url %>
   <div>
     <a href="/cards/<%=card_user.card.id%>">More info about the card</a>
