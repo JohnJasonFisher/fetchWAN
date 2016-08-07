@@ -1,5 +1,7 @@
 class CardsController < ApplicationController
   def index
+    @card_users = current_user.card_users
+
     render "index.html.erb"
   end
 
