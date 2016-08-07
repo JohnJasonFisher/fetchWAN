@@ -6,4 +6,6 @@
 <h4>card quantity: <%= card_user.quantity %> </h4>
 <%= image_tag card_user.card.url %>
 <% end %>
-
+<div>
+  <%= link_to "logout", "/logout", method: :delete %>
+</div>
