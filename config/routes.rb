@@ -1,3 +1,4 @@
 Rails.application.routes.draw do
-  get '/fetchWAN' => 'cards#index'
+  get '/cards' => 'cards#index'
+  get '/cards/:id' => 'cards#show'
 end
