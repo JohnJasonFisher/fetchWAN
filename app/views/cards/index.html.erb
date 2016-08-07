@@ -1,11 +1,14 @@
 <h1>Hello <%= current_user.name.capitalize %></h1>
-<h2>Here are the cards you currently own:</h2>
-
-<% @card_users.each do |card_user| %>
-<h3> <%= card_user.card.name %> </h3>
-<h4>card quantity: <%= card_user.quantity %> </h4>
-<%= image_tag card_user.card.url %>
-<% end %>
 <div>
   <%= link_to "logout", "/logout", method: :delete %>
 </div>
+<h2>Here are the cards you currently own:</h2>
+
+<% @card_users.each do |card_user| %>
+  <h3> <%= card_user.card.name %> </h3>
+  <h4>card quantity: <%= card_user.quantity %> </h4>
+  <%= image_tag card_user.card.url %>
+  <div>
+    <a href="/cards/<%=card_user.card.id%>">More info about the card</a>
+  </div>
+<% end %>
