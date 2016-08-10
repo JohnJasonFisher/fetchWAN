@@ -1,6 +1,14 @@
 <h1>Add a new card to your collection!</h1>
 
-<%= form_tag '/cardusers/new', method: :post do %>
+<%= form_tag '/cardusers', method: :post do %>
   <%= label_tag :name %>:
-  <%= text_field_tag :name %>
+  <%= select_tag(:card_id, options_from_collection_for_select(Card.all, :id, :name)) %>
+  <%= label_tag :quantity %>:
+  <%= text_field_tag :quantity %>
+  <%= label_tag :desired_sell_price %>:
+  <%= text_field_tag :desired_sell_price %>
+  <%= label_tag :desired_buy_price %>:
+  <%= text_field_tag :desired_buy_price %>
+  <%= hidden_field_tag :user_id, current_user.id %>
+  <%= submit_tag "submit" %>
 <% end %>

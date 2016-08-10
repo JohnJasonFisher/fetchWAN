@@ -6,6 +6,6 @@ Rails.application.routes.draw do
   post '/login' => 'sessions#create'
   delete '/logout/' => 'sessions#destroy'
 
-  get '/carduser/new' => 'card_users#new'
-  post '/carduser/new' => 'card_users#create'
+  get '/cardusers/new' => 'card_users#new'
+  post '/cardusers' => 'card_users#create'
 end
