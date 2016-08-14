@@ -61,3 +61,4 @@ cards.each do |card|
 end
 
 puts "Loading Complete"
+puts "hello"
