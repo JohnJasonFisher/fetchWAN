@@ -12,4 +12,8 @@ class CardsController < ApplicationController
     @card = Card.find_by(id: params[:id])
     render "show.html.erb"
   end
+
+  def portfolio
+    render 'portfolio.html.erb'
+  end
 end

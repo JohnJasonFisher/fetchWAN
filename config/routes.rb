@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   get '/cards' => 'cards#index'
+  get '/cards/portfolio' => 'cards#portfolio'
   get '/cards/:id' => 'cards#show'
 
   get '/login' => 'sessions#new'
