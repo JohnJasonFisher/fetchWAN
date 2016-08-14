@@ -42,3 +42,22 @@ alert = Alert.create(
 )
 
 puts "It's working!"
+
+puts "Loading Geek..."
+
+nerd = "nerd"
+nerd = User.create(
+  name: nerd.capitalize,
+  email: "#{nerd}@#{nerd}.com",
+  password: "password"
+)
+
+cards.each do |card|
+  CardUser.create(
+    user_id: nerd.id,
+    card_id: card.id,
+    quantity: rand(10) + 1
+  )
+end
+
+puts "Loading Complete"
