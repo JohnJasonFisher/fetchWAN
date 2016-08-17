@@ -858,135 +858,25 @@
     <!--=== End Breadcrumbs ===-->
 
     <!--=== Content Part ===-->
+  
     <div class="container content-sm portfolio-4-columns">
       <div class="row">
+  <% @card_users.each do |card_user| %>
+        <!-- repeat start -->
         <div class="col-md-3 col-sm-6">
           <div class="view view-tenth">
             <img class="img-responsive" src="assets/img/main/img1.jpg" alt="" />
             <div class="mask">
-              <h2>I CHANGED FOR YOU</h2>
-              <p>At vero eos et accusamus et iusto odio dignissimos dolores et quas molestias excepturi sint occaecati cupiditate non provident.</p>
+              <h2><%= card_user.card.name %></h2>
+              <p>Quantity: <%= card_user.quantity %></p>
               <a href="portfolio_old_item.html" class="info">Read More</a>
             </div>
           </div>
         </div>
-        <div class="col-md-3 col-sm-6">
-          <div class="view view-tenth">
-            <img class="img-responsive" src="assets/img/main/img2.jpg" alt="" />
-            <div class="mask">
-              <h2>Portfolio Item</h2>
-              <p>At vero eos et accusamus et iusto odio dignissimos dolores et quas molestias excepturi sint occaecati cupiditate non provident.</p>
-              <a href="portfolio_old_item.html" class="info">Read More</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-3 col-sm-6">
-          <div class="view view-tenth">
-            <img class="img-responsive" src="assets/img/main/img5.jpg" alt="" />
-            <div class="mask">
-              <h2>Portfolio Item</h2>
-              <p>At vero eos et accusamus et iusto odio dignissimos dolores et quas molestias excepturi sint occaecati cupiditate non provident.</p>
-              <a href="portfolio_old_item.html" class="info">Read More</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-3 col-sm-6">
-          <div class="view view-tenth">
-            <img class="img-responsive" src="assets/img/main/img7.jpg" alt="" />
-            <div class="mask">
-              <h2>Portfolio Item</h2>
-              <p>At vero eos et accusamus et iusto odio dignissimos dolores et quas molestias excepturi sint occaecati cupiditate non provident.</p>
-              <a href="portfolio_old_item.html" class="info">Read More</a>
-            </div>
-          </div>
-        </div>
-      </div><!--/row-->
+        <!-- repeat end -->
+  <% end %>
+      </div>
 
-      <div class="row">
-        <div class="col-md-3 col-sm-6">
-          <div class="view view-tenth">
-            <img class="img-responsive" src="assets/img/main/img3.jpg" alt="" />
-            <div class="mask">
-              <h2>Portfolio Item</h2>
-              <p>At vero eos et accusamus et iusto odio dignissimos dolores et quas molestias excepturi sint occaecati cupiditate non provident.</p>
-              <a href="portfolio_old_item.html" class="info">Read More</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-3 col-sm-6">
-          <div class="view view-tenth">
-            <img class="img-responsive" src="assets/img/main/img4.jpg" alt="" />
-            <div class="mask">
-              <h2>Portfolio Item</h2>
-              <p>At vero eos et accusamus et iusto odio dignissimos dolores et quas molestias excepturi sint occaecati cupiditate non provident.</p>
-              <a href="portfolio_old_item.html" class="info">Read More</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-3 col-sm-6">
-          <div class="view view-tenth">
-            <img class="img-responsive" src="assets/img/main/img6.jpg" alt="" />
-            <div class="mask">
-              <h2>Portfolio Item</h2>
-              <p>At vero eos et accusamus et iusto odio dignissimos dolores et quas molestias excepturi sint occaecati cupiditate non provident.</p>
-              <a href="portfolio_old_item.html" class="info">Read More</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-3 col-sm-6">
-          <div class="view view-tenth">
-            <img class="img-responsive" src="assets/img/main/img8.jpg" alt="" />
-            <div class="mask">
-              <h2>Portfolio Item</h2>
-              <p>At vero eos et accusamus et iusto odio dignissimos dolores et quas molestias excepturi sint occaecati cupiditate non provident.</p>
-              <a href="portfolio_old_item.html" class="info">Read More</a>
-            </div>
-          </div>
-        </div>
-      </div><!--/row-->
-
-      <div class="row">
-        <div class="col-md-3 col-sm-6">
-          <div class="view view-tenth">
-            <img class="img-responsive" src="assets/img/main/img9.jpg" alt="" />
-            <div class="mask">
-              <h2>Portfolio Item</h2>
-              <p>At vero eos et accusamus et iusto odio dignissimos dolores et quas molestias excepturi sint occaecati cupiditate non provident.</p>
-              <a href="portfolio_old_item.html" class="info">Read More</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-3 col-sm-6">
-          <div class="view view-tenth">
-            <img class="img-responsive" src="assets/img/main/img10.jpg" alt="" />
-            <div class="mask">
-              <h2>Portfolio Item</h2>
-              <p>At vero eos et accusamus et iusto odio dignissimos dolores et quas molestias excepturi sint occaecati cupiditate non provident.</p>
-              <a href="portfolio_old_item.html" class="info">Read More</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-3 col-sm-6">
-          <div class="view view-tenth no-margin-bottom">
-            <img class="img-responsive" src="assets/img/main/img11.jpg" alt="" />
-            <div class="mask">
-              <h2>Portfolio Item</h2>
-              <p>At vero eos et accusamus et iusto odio dignissimos dolores et quas molestias excepturi sint occaecati cupiditate non provident.</p>
-              <a href="portfolio_old_item.html" class="info">Read More</a>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-3 col-sm-6">
-          <div class="view view-tenth no-margin-bottom">
-            <img class="img-responsive" src="assets/img/main/img12.jpg" alt="" />
-            <div class="mask">
-              <h2>Portfolio Item</h2>
-              <p>At vero eos et accusamus et iusto odio dignissimos dolores et quas molestias excepturi sint occaecati cupiditate non provident.</p>
-              <a href="portfolio_old_item.html" class="info">Read More</a>
-            </div>
-          </div>
-        </div>
-      </div><!--/row-->
     </div><!--/container-->
     <!--=== End Content Part ===-->
 
