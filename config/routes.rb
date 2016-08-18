@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
   get '/usercards' => 'usercards#index'
-  get '/usercards/portfolio' => 'usercards#portfolio'
   
   get '/cards/:id' => 'cards#show'
   
