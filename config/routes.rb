@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
   get '/cards' => 'cards#index'
-  get '/cards/portfolio' => 'cards#portfolio'
+  get '/cardusers/portfolio' => 'cards#portfolio'
   get '/cards/:id' => 'cards#show'
+  
+  delete '/cards/:id' => 'card_user#destroy'
 
   get '/login' => 'sessions#new'
   post '/login' => 'sessions#create'

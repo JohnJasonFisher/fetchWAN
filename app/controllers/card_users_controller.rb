@@ -17,4 +17,15 @@ class CardUsersController < ApplicationController
       render :new
     end
   end
+
+  def portfolio
+    @card_users = current_user.card_users
+    render 'portfolio.html.erb'
+  end
+
+  def destroy
+    @card_user = CardUser.find_by(id: params[:id])
+    @card_user.destroy
+    redirect_to '/cards/portfolio'
+  end
 end

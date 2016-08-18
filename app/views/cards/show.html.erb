@@ -1,2 +1,5 @@
 <h1>This should show an image:</h1>
 <%= image_tag @card.url %>
+<div>
+  <%= link_to "Remove all of #{card_user.card.name}", "/cards/#{@card_user.card.id}", method: :delete %>
+</div>
