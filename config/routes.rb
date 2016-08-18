@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
-  get '/cards' => 'cards#index'
-  get '/cardusers/portfolio' => 'cards#portfolio'
+  get '/usercards' => 'usercards#index'
+  get '/usercards/portfolio' => 'usercards#portfolio'
+  
   get '/cards/:id' => 'cards#show'
   
   delete '/cards/:id' => 'card_user#destroy'
