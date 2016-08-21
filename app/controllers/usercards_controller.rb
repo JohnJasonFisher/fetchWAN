@@ -7,6 +7,7 @@ class UsercardsController < ApplicationController
       render "index.html.erb"
     end
   end
+  
   def new
     render 'new.html.erb'
   end

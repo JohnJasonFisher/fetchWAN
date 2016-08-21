@@ -1,6 +1,6 @@
 <h1>Add a new card to your collection!</h1>
 
-<%= form_tag '/cardusers', method: :post do %>
+<%= form_tag '/usercards/add', method: :post do %>
   <%= label_tag :name %>:
   <%= select_tag(:card_id, options_from_collection_for_select(Card.all, :id, :name)) %>
   <%= label_tag :quantity %>:
