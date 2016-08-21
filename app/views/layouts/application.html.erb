@@ -73,8 +73,10 @@
                         <li class="topbar-devider"></li>
                         <% if current_user %>
                             <li><a href="page_login.html"><%= current_user.name %></a></li>
+                            <li class="topbar-devider"></li>
+                            <li><a href="/logout">Log out</a></li>
                         <% else %>
-                            <li><a href="page_login.html">Login</a></li>
+                            <li><a href="/login">Login</a></li>
                         <% end %>
                     </ul>
                 </div>
