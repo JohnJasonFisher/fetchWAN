@@ -20,7 +20,7 @@ class UsercardsController < ApplicationController
     user_id: params[:user_id]
     )
     if carduser.save
-      redirect_to '/cards'
+      redirect_to '/usercards'
     else
       render :new
     end

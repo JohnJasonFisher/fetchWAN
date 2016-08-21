@@ -5,10 +5,10 @@ Rails.application.routes.draw do
   
   delete '/cards/:id' => 'card_user#destroy'
 
+  get '/signup' => 'users#new'
+  post '/signup' => 'users#create'
+
   get '/login' => 'sessions#new'
   post '/login' => 'sessions#create'
   get '/logout' => 'sessions#destroy'
-
-  get '/cardusers/new' => 'card_users#new'
-  post '/cardusers' => 'card_users#create'
 end
