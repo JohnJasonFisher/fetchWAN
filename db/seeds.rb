@@ -4,13 +4,15 @@ CardUser.destroy_all
 
 power9 = ["Black Lotus", "Time Walk", "Ancestral Recall", "Mox Sapphire", "Mox Jet", "Mox Ruby", "Mox Pearl", "Mox Emerald", "Timetwister"]
 power9_image = ["Image.ashx.jpeg", "Image.ashx-2.jpeg", "Image.ashx-3.jpeg", "Image.ashx-4.jpeg", "Image.ashx-5.jpeg", "Image.ashx-6.jpeg", "Image.ashx-7.jpeg", "Image.ashx-8.jpeg", "Image.ashx-9.jpeg"]
+power9_multiverse_id = [382866, 383131, 382841, 383023, 383020, 383022, 383021, 383019, 383132]
 
 power9.each do |power|
   card = Card.create(
     name: power,
     price: 1,
     ref_time: 23.years.ago,
-    url: power9_image.shift
+    url: power9_image.shift,
+    multiverse_id: power9_image.shift
   )
 end
 
