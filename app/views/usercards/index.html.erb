@@ -63,12 +63,13 @@
     <!--=== Content Part ===-->
     <div class="container content-sm portfolio-4-columns">
       <div class="row">
+        <p>dsafdsafdsa</p>
         <% @card_users.each do |card_user| %>
           <!-- repeat start -->
           <div class="col-md-3 col-sm-6">
             <h2><%= card_user.card.name %></h2>
             <div class="view view-tenth">
-              <%= image_tag card_user.card.url, class: "img-responsive", alt: "halp" %>
+              <%= image_tag card_user.card.show_image(card_user.card.multiverse_id), class: "img-responsive", alt: "halp" %>
               <!-- <img class="img-responsive" src="" alt="" /> -->
               <div class="mask">
                 <h2><%= card_user.card.name %></h2>

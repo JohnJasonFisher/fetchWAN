@@ -10,4 +10,8 @@ class Card < ActiveRecord::Base
       return price
     end
   end
+
+  def show_image(multiverse_id)
+    image = Unirest.get("https://api.magicthegathering.io/v1/cards/#{multiverse_id}").body["card"]["imageUrl"]
+  end
 end
