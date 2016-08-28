@@ -7,7 +7,7 @@ class Card < ActiveRecord::Base
   end
 
   def show_price
-    price = Unirest.get("http://magictcgprices.appspot.com/api/cfb/price.json?cardname=#{name}").body[0]
+    price = Unirest.get("http://magictcgprices.appspot.com/api/cfb/price.json?cardname=#{name}&setname=#{set_name}").body[0]
     if price == ""
       return "Price not available"
     else
