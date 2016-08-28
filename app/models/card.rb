@@ -18,4 +18,8 @@ class Card < ActiveRecord::Base
   def show_image(multiverse_id)
     image = Unirest.get("https://api.magicthegathering.io/v1/cards/#{multiverse_id}").body["card"]["imageUrl"]
   end
+
+  def name
+    
+  end
 end

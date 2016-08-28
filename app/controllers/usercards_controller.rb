@@ -14,11 +14,11 @@ class UsercardsController < ApplicationController
 
   def create
     carduser = CardUser.new(
-    card_id: params[:card_id],
-    quantity: params[:quantity],
-    desired_sell_price: params[:desired_sell_price],
-    desired_buy_price: params[:desired_buy_price],
-    user_id: params[:user_id]
+      multiverse_id: params[:multiverse_id],
+      quantity: params[:quantity],
+      desired_sell_price: params[:desired_sell_price],
+      desired_buy_price: params[:desired_buy_price],
+      user_id: params[:user_id]
     )
     if carduser.save
       redirect_to '/usercards'
