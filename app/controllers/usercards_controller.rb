@@ -3,8 +3,6 @@ class UsercardsController < ApplicationController
     if !current_user
       redirect_to '/login'
     else
-      multiverse_id = 3
-      @card_hash = Unirest.get("https://api.magicthegathering.io/v1/cards/#{multiverse_id}").body
       @card_users = current_user.card_users
       render "index.html.erb"
     end

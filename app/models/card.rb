@@ -2,7 +2,11 @@ class Card < ActiveRecord::Base
   has_many :card_users
   has_many :users, through: :card_users
 
-  def price
+  def show_name
+    name = Unirest.get("https://api.magicthegathering.io/v1/cards/#{multiverse_id}").body["card"]["name"]
+  end
+
+  def show_price
     price = Unirest.get("http://magictcgprices.appspot.com/api/cfb/price.json?cardname=#{name}").body[0]
     if price == ""
       return "Price not available"
