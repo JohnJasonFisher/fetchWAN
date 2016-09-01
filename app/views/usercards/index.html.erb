@@ -66,15 +66,16 @@
         <% @card_users.each do |card_user| %>
           <!-- repeat start -->
           <div class="col-md-3 col-sm-6">
-            <h2><%= card_user.show_name %></h2>
+            <h2><%= card_user.card.show_name %></h2>
+            <h3><%= card_user.card.show_set_name %></h3>
             <div class="view view-tenth">
-              <%= image_tag card_user.show_image(card_user.multiverse_id), class: "img-responsive", alt: "halp" %>
+              <%= image_tag card_user.card.show_image, class: "img-responsive", alt: "halp" %>
               <!-- <img class="img-responsive" src="" alt="" /> -->
               <div class="mask">
-                <h2><%= card_user.show_name %></h2>
+                <h2><%= card_user.card.show_name %></h2>
                 <a href="portfolio_old_item.html" class="info">Read More</a>
                 <div>
-                  <h3><b>Price: <%= card_user.show_price %></b></h3>
+                  <h3><b>Price: <%= card_user.card.show_price %></b></h3>
                 </div>
               </div>
               <p>Quantity: <%= card_user.quantity %></p>
