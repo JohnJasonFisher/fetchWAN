@@ -21,6 +21,15 @@ class UsercardsController < ApplicationController
       user_id: params[:user_id]
     )
     if carduser.save
+      if !carduser.card_id
+        card = Card.new(
+          name: params[:name],
+          url: params[:url],
+          multiverse_id: params[:multiverse_id],
+          price: params[:price],
+          set_name: params[:set_name]
+        )
+      end
       redirect_to '/usercards'
     else
       render :new

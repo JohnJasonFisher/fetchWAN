@@ -1,6 +1,7 @@
 class Card < ActiveRecord::Base
   has_many :card_users
   has_many :users, through: :card_users
+  has_many :prices
 
   def show_name
     name = Unirest.get("https://api.magicthegathering.io/v1/cards/#{multiverse_id}").body["card"]["name"]
