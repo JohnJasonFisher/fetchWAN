@@ -4,7 +4,6 @@ Rails.application.routes.draw do
   post '/usercards/add' => 'usercards#create'
   
   get '/cards/:id' => 'cards#show'
-  
   delete '/cards/:id' => 'card_user#destroy'
 
   get '/signup' => 'users#new'
