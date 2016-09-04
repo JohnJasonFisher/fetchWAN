@@ -14,17 +14,25 @@ class UsercardsController < ApplicationController
 
   def create
     carduser = CardUser.new(
-    card_id: params[:card_id],
-    quantity: params[:quantity],
-    desired_sell_price: params[:desired_sell_price],
-    desired_buy_price: params[:desired_buy_price],
-    user_id: params[:user_id]
+      multiverse_id: params[:multiverse_id],
+      quantity: params[:quantity],
+      desired_sell_price: params[:desired_sell_price],
+      desired_buy_price: params[:desired_buy_price],
+      user_id: params[:user_id]
     )
-    if carduser.save
-      redirect_to '/usercards'
+    if card = Card.find_by(multiverse_id: params[:multiverse_id])
+      carduser.card_id = card.id
     else
-      render :new
+      card = Card.new(multiverse_id: params[:multiverse_id])
+      card.name = card.show_name
+      card.set_name = card.show_set_name
+      card.url = card.show_image
+      card.price = card.show_price[1..-1].to_f
+      card.save
+      carduser.card_id = card.id
     end
+    carduser.save
+    redirect_to '/usercards'
   end
 
   def destroy
