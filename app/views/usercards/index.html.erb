@@ -66,12 +66,12 @@
         <% @card_users.each do |user_card| %>
           <!-- repeat start -->
           <div class="col-md-3 col-sm-6">
-            <h2><%= user_card.card.card_name %></h2>
+            <h2><%= user_card.card.name %></h2>
             <div class="view view-tenth">
               <%= image_tag user_card.card.image_url, class: "img-responsive", alt: "halp" %>
               <!-- <img class="img-responsive" src="" alt="" /> -->
               <div class="mask">
-                <h2><%= user_card.card.card_name %></h2>
+                <h2><%= user_card.card.name %></h2>
                 <a href="/cards/<%= user_card.card.id %>" class="info">Read More</a>
                 <div>
                   <h3><b>Price: <%= user_card.card.show_price %></b></h3>

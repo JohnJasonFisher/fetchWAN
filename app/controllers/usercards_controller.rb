@@ -26,8 +26,8 @@ class UsercardsController < ApplicationController
       card = Card.new(multiverse_id: params[:multiverse_id])
       card.name = card.show_name
       card.set_name = card.show_set_name
-      card.url = card.show_image
-      card.price = card.show_price[1..-1].to_f
+      card.image_url = card.show_image
+      card.current_price = card.show_price[1..-1].to_f
       card.save
       carduser.card_id = card.id
     end
