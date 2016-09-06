@@ -1,11 +1,16 @@
 class UsercardsController < ApplicationController
+  before_action :authenticate_user
+
   def index
-    if !current_user
-      redirect_to '/login'
-    else
-      @card_users = current_user.card_users
-      render "index.html.erb"
-    end
+    alert = Alert.new(
+      user_id: current_user.id,
+      title: 'busy title',
+      text: 'junk'
+    )
+    alert.alert_seller
+    alert.save
+    @card_users = current_user.card_users
+    render "index.html.erb"
   end
   
   def new
@@ -40,4 +45,6 @@ class UsercardsController < ApplicationController
     @card_user.destroy
     redirect_to '/cards/portfolio'
   end
+
+
 end

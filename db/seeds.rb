@@ -1,6 +1,7 @@
 User.destroy_all
 Card.destroy_all
 CardUser.destroy_all
+Alert.destroy_all
 
 names = ["test", "peter", "josh", "jay", "mike", "diana"]
 
@@ -8,7 +9,8 @@ names.each do |name|
   user = User.create(
     name: name,
     email: "#{name}@#{name}.com",
-    password: "password"
+    password: "password",
+    phone_number: "555-245-5555"
   )
   user.save
 end

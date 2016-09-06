@@ -1,2 +1,3 @@
 class AlertsController < ApplicationController
+  
 end
