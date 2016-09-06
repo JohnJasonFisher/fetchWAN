@@ -2,13 +2,16 @@ class UsercardsController < ApplicationController
   before_action :authenticate_user
 
   def index
-    alert = Alert.new(
-      user_id: current_user.id,
-      title: 'busy title',
-      text: 'junk'
-    )
-    alert.alert_seller
-    alert.save
+    # legacy alert
+    
+    # alert = Alert.new(
+    #   user_id: current_user.id,
+    #   title: 'busy title',
+    #   text: 'junk'
+    # )
+    # alert.alert_seller
+    # alert.save
+
     @card_users = current_user.card_users
     render "index.html.erb"
   end
@@ -32,7 +35,7 @@ class UsercardsController < ApplicationController
       card.name = card.show_name
       card.set_name = card.show_set_name
       card.image_url = card.show_image
-      card.current_price = card.show_price[1..-1].to_f
+      card.current_price = card.pull_retail_price
       card.save
       carduser.card_id = card.id
     end

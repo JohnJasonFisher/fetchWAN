@@ -1,4 +1,5 @@
 <%= image_tag @card.image_url %>
-<h3>Current Price: <%= @card.show_price %></h3>
+<h3>Current Price: <%= @card.current_price %></h3>
 
-<p> Should I show desired sell and buy price, and allow them to change that here? </p>
+<h4>Your desired buy price: <%= @usercard.desired_buy_price %> </h4>
+<h4>Your desired sell price: <%= @usercard.desired_sell_price %> </h4>

@@ -44,6 +44,7 @@ group :development, :test do
   gem 'byebug'
   gem 'rspec-rails', '~> 3.5'
   gem 'dotenv-rails'
+  gem 'whenever', :require => false
 end
 
 group :development do
