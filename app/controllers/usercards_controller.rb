@@ -3,7 +3,7 @@ class UsercardsController < ApplicationController
 
   def index
     # legacy alert
-    
+
     # alert = Alert.new(
     #   user_id: current_user.id,
     #   title: 'busy title',
@@ -48,6 +48,4 @@ class UsercardsController < ApplicationController
     @card_user.destroy
     redirect_to '/cards/portfolio'
   end
-
-
 end
