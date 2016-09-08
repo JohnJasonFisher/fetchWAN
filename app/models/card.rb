@@ -13,13 +13,15 @@ class Card < ActiveRecord::Base
   end
 
   def show_name
-    # name = Unirest.get("https://api.magicthegathering.io/v1/cards/#{multiverse_id}").body["card"]["name"]
     name = data["card"]["name"]
   end
 
   def show_set_name
-    name = Unirest.get("https://api.magicthegathering.io/v1/cards/#{multiverse_id}").body["card"]["setName"]
     name = data["card"]["setName"]
+  end
+
+  def show_set
+    name = data["card"]["set"]
   end
 
   def pull_retail_price

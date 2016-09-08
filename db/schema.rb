@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160904062421) do
+ActiveRecord::Schema.define(version: 20160908000022) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -43,6 +43,7 @@ ActiveRecord::Schema.define(version: 20160904062421) do
     t.integer  "multiverse_id"
     t.string   "set_name"
     t.decimal  "current_price", precision: 7, scale: 2
+    t.string   "set"
   end
 
   create_table "prices", force: :cascade do |t|

@@ -34,6 +34,7 @@ class UsercardsController < ApplicationController
       card = Card.new(multiverse_id: params[:multiverse_id])
       card.name = card.show_name
       card.set_name = card.show_set_name
+      card.set = card.show_set
       card.image_url = card.show_image
       card.current_price = card.pull_retail_price
       card.save
