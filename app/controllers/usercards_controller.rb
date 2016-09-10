@@ -36,9 +36,10 @@ class UsercardsController < ApplicationController
       card.set_name = card.show_set_name
       card.set = card.show_set
       card.image_url = card.show_image
-      card.current_price = card.pull_retail_price
       card.save
       carduser.card_id = card.id
+      card.current_price = card.pull_market_price
+      card.save
     end
     carduser.save
     redirect_to '/usercards'
