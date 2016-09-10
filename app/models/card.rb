@@ -28,14 +28,14 @@ class Card < ActiveRecord::Base
     image = data["card"]["imageUrl"]
   end
 
-  def pull_retail_price
-    price = Unirest.get("http://magictcgprices.appspot.com/api/cfb/price.json?cardname=#{name}&setname=#{set_name}").body[0]
-    if price == "" || '0.00'
-      return 'price not available'
-    else
-      return price[0..-1].to_f
-    end
-  end
+  # def pull_retail_price
+  #   price = Unirest.get("http://magictcgprices.appspot.com/api/cfb/price.json?cardname=#{name}&setname=#{set_name}").body[0]
+  #   if price == "" || '0.00'
+  #     return 'price not available'
+  #   else
+  #     return price[0..-1].to_f
+  #   end
+  # end
 
   def pull_market_price
     price = Unirest.get("http://api.mtgowikiprice.com/api/card/price?sets=#{set}&cardNames=#{name}&api_key=#{ENV['API_KEY']}").body
@@ -47,29 +47,29 @@ class Card < ActiveRecord::Base
     price
   end
 
-  def self.record_retail_price
-    cards = self.all
-    cards.each do |card|
-      if card_price != card.current_price
-        card.current_price = card_price
-        card.save
-      end
-    end
-  end
+  # def self.record_retail_price
+  #   cards = self.all
+  #   cards.each do |card|
+  #     if card_price != card.current_price
+  #       card.current_price = card_price
+  #       card.save
+  #     end
+  #   end
+  # end
 
   def self.record_market_price
     cards = self.all
     cards.each do |card|
       card_price = card.pull_market_price
-      Price.create(
-        price: card_price,
-        card_id: card.id
-      )
       if card_price != card.current_price
         puts card_price
         card.current_price = card_price
         card.save
+        # if card.save
+        #   alert.alert_admin
+        # end
         puts card_price
+
       end
     end
   end

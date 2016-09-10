@@ -12,6 +12,16 @@ class Alert < ActiveRecord::Base
     )
   end
 
+  def alert_admin
+    @client = Twilio::REST::Client.new ENV['ACCOUNT_SID'], ENV['AUTH_TOKEN']
+
+    @message = @client.messages.create(
+      to: "+18152050931",
+      from: "+18152050931",
+      body: "Price change yo."
+    ) 
+  end
+
   def user
     User.find_by(id: user_id)
   end

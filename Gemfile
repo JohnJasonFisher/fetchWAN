@@ -25,9 +25,12 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem 'unirest'
 
+# MTG devoloper toolkit used for card attributes
 gem 'mtg_sdk'
 
-# Use Twilio
+gem 'seed_dump'd
+
+# Use Twilio, an sms app
 gem 'twilio-ruby'
 
 # Use ActiveModel has_secure_password
