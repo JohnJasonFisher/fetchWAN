@@ -28,7 +28,7 @@ gem 'unirest'
 # MTG devoloper toolkit used for card attributes
 gem 'mtg_sdk'
 
-gem 'seed_dump'd
+gem 'seed_dump'
 
 # Use Twilio, an sms app
 gem 'twilio-ruby'
