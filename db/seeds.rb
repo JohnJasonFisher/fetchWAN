@@ -1,27 +1,81 @@
-User.destroy_all
-Card.destroy_all
-CardUser.destroy_all
-Alert.destroy_all
-
-names = ["test", "peter", "josh", "jay", "mike", "diana"]
-
-names.each do |name|
-  user = User.create(
-    name: name,
-    email: "#{name}@#{name}.com",
-    password: "password",
-    phone_number: "555-245-5555"
-  )
-  user.save
-end
-
-User.all.each do |user|
-  random_num = rand(999) + 1
-  user_cards = CardUser.new(
-    user_id: user.id,
-    multiverse_id: random_num,
-    quantity: random_num,
-    desired_sell_price: random_num,
-    desired_buy_price: random_num
-  )
-end
+Alert.create!([
+  {user_id: 12, title: "title", text: "stuff n junk"},
+  {user_id: 19, title: "title", text: "stuff n junk"},
+  {user_id: 23, title: "title", text: "stuff n junk"},
+  {user_id: 27, title: "title", text: "stuff n junk"},
+  {user_id: 34, title: "title", text: "stuff n junk"},
+  {user_id: 36, title: "title", text: "stuff n junk"},
+  {user_id: 43, title: "title", text: "stuff n junk"},
+  {user_id: 50, title: "title", text: "stuff n junk"},
+  {user_id: 57, title: "title", text: "stuff n junk"},
+  {user_id: 85, title: "busy title", text: "junk"},
+  {user_id: 85, title: "busy title", text: "junk"},
+  {user_id: 85, title: "busy title", text: "junk"},
+  {user_id: 85, title: "busy title", text: "junk"},
+  {user_id: 85, title: "busy title", text: "junk"},
+  {user_id: 85, title: "busy title", text: "junk"}
+])
+Card.create!([
+  {name: "Thoughtseize", image_url: "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=373632&type=card", multiverse_id: 373632, set_name: "Theros", current_price: "5.08", set: "THS"},
+  {name: "Spellskite", image_url: "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=397743&type=card", multiverse_id: 397743, set_name: "Modern Masters 2015 Edition", current_price: "18.57", set: "MM2"},
+  {name: "Inquisition of Kozilek", image_url: "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=416897&type=card", multiverse_id: 193428, set_name: "Rise of the Eldrazi", current_price: "2.15", set: "ROE"},
+  {name: "Serum Visions", image_url: "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=416877&type=card", multiverse_id: 50145, set_name: "Fifth Dawn", current_price: "3.11", set: "5DN"},
+  {name: "Hallowed Fountain", image_url: "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=405100&type=card", multiverse_id: 405100, set_name: "Zendikar Expeditions", current_price: "5.7", set: "EXP"},
+  {name: "Lightning Bolt", image_url: "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=397722&type=card", multiverse_id: 397722, set_name: "Modern Masters 2015 Edition", current_price: "0.67", set: "MM2"},
+  {name: "Gitaxian Probe", image_url: "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=233056&type=card", multiverse_id: 233056, set_name: "New Phyrexia", current_price: "3.5", set: "NPH"},
+  {name: "Tarmogoyf", image_url: "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=397682&type=card", multiverse_id: 397682, set_name: "Modern Masters 2015 Edition", current_price: "53.94", set: "MM2"},
+  {name: "Noble Hierarch", image_url: "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=179434&type=card", multiverse_id: 179434, set_name: "Conflux", current_price: "34.22", set: "CON"},
+  {name: "Grafdigger's Cage", image_url: "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=278452&type=card", multiverse_id: 278452, set_name: "Dark Ascension", current_price: "17.33", set: "DKA"},
+  {name: "Path to Exile", image_url: "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=382192&type=card", multiverse_id: 370408, set_name: "Modern Event Deck 2014", current_price: "3.72", set: "MMA"},
+  {name: "Arid Mesa", image_url: "http://gatherer.wizards.com/Handlers/Image.ashx?multiverseid=405092&type=card", multiverse_id: 405092, set_name: "Zendikar Expeditions", current_price: "5.2", set: "EXP"}
+])
+CardUser.create!([
+  {user_id: 85, card_id: 113, desired_sell_price: "100.0", desired_buy_price: "10.0", quantity: 1, multiverse_id: 179434},
+  {user_id: 85, card_id: 114, desired_sell_price: "100.0", desired_buy_price: "10.0", quantity: 9, multiverse_id: 373632},
+  {user_id: 85, card_id: 115, desired_sell_price: "100.0", desired_buy_price: "10.0", quantity: 8, multiverse_id: 382192},
+  {user_id: 85, card_id: 116, desired_sell_price: "100.0", desired_buy_price: "10.0", quantity: 7, multiverse_id: 397722},
+  {user_id: 85, card_id: 117, desired_sell_price: "100.0", desired_buy_price: "10.0", quantity: 8, multiverse_id: 416897},
+  {user_id: 85, card_id: 118, desired_sell_price: "400.0", desired_buy_price: "100.0", quantity: 4, multiverse_id: 397682},
+  {user_id: 85, card_id: 119, desired_sell_price: "10.0", desired_buy_price: "2.0", quantity: 4, multiverse_id: 416877},
+  {user_id: 85, card_id: 120, desired_sell_price: "20.0", desired_buy_price: "5.0", quantity: 4, multiverse_id: 233056},
+  {user_id: 85, card_id: 121, desired_sell_price: "50.0", desired_buy_price: "10.0", quantity: 4, multiverse_id: 397743},
+  {user_id: 85, card_id: 122, desired_sell_price: "100.0", desired_buy_price: "10.0", quantity: 7, multiverse_id: 278452},
+  {user_id: 85, card_id: 123, desired_sell_price: "200.0", desired_buy_price: "10.0", quantity: 5, multiverse_id: 405092},
+  {user_id: 85, card_id: 124, desired_sell_price: "50.0", desired_buy_price: "10.0", quantity: 1, multiverse_id: 386616},
+  {user_id: 85, card_id: 125, desired_sell_price: "200.0", desired_buy_price: "100.0", quantity: 1, multiverse_id: 405100},
+  {user_id: 86, card_id: 113, desired_sell_price: "100.0", desired_buy_price: "1.0", quantity: 1, multiverse_id: 179434}
+])
+Price.create!([
+  {card_id: 114, price: "5.08"},
+  {card_id: 121, price: "18.57"},
+  {card_id: 117, price: "2.15"},
+  {card_id: 125, price: "5.7"},
+  {card_id: 116, price: "0.67"},
+  {card_id: 119, price: "3.2"},
+  {card_id: 120, price: "3.5"},
+  {card_id: 118, price: "53.94"},
+  {card_id: 113, price: "34.22"},
+  {card_id: 122, price: "17.33"},
+  {card_id: 115, price: "3.72"},
+  {card_id: 123, price: "5.2"},
+  {card_id: 114, price: "5.08"},
+  {card_id: 121, price: "18.57"},
+  {card_id: 117, price: "2.15"},
+  {card_id: 125, price: "5.7"},
+  {card_id: 116, price: "0.67"},
+  {card_id: 119, price: "3.11"},
+  {card_id: 120, price: "3.5"},
+  {card_id: 118, price: "53.94"},
+  {card_id: 113, price: "34.22"},
+  {card_id: 122, price: "17.33"},
+  {card_id: 115, price: "3.72"},
+  {card_id: 123, price: "5.2"}
+])
+User.create!([
+  {email: "peter@peter.com", password_digest: "$2a$10$kfNyS4kqOqvYJqt1F/Mof.SP5bSDYE.ALD/.Y2JSfjN5NeCbgxdP2", name: "peter", phone_number: nil},
+  {email: "josh@josh.com", password_digest: "$2a$10$y3xN/nOaCtcHcvfO8uZ3LuohTIjKoUhyBeLqXSB9i9p.jTtsJrLDq", name: "josh", phone_number: nil},
+  {email: "jay@jay.com", password_digest: "$2a$10$Rfx2MyHeNy3VpKk2w4R6C.1JY4izPbPTkrZMdMizwK5Qcl8FoVJaq", name: "jay", phone_number: nil},
+  {email: "mike@mike.com", password_digest: "$2a$10$J3o6PP2r8sgXIizPwwEZ3.3jNqj5WNhZJ20CXGPGblvbtoA7OyAO2", name: "mike", phone_number: nil},
+  {email: "diana@diana.com", password_digest: "$2a$10$tayQ5eFSrIPimHsd9wazXO6c8Lt3h81Vh.oxL59h0ctB597G.cq3m", name: "diana", phone_number: nil},
+  {email: "test@test.com", password_digest: "$2a$10$MQ2KUStkg/5UoxjpW5k6q.3hY/9Sn5aKOJQIfvkNAkSEZ/qGS53la", name: "test", phone_number: "708-415-8094"}
+])
