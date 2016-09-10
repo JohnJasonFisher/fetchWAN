@@ -44,18 +44,14 @@ class Card < ActiveRecord::Base
       price: price,
       card_id: id
     )
+    price
   end
 
   def self.record_retail_price
     cards = self.all
     cards.each do |card|
-      price = Price.new(
-        price: card.pull_retail_price,
-        card_id: card.id
-      )
-      price.save
-      if card.pull_retail_price != card.current_price
-        card.current_price = card.pull_retail_price
+      if card_price != card.current_price
+        card.current_price = card_price
         card.save
       end
     end
@@ -64,11 +60,16 @@ class Card < ActiveRecord::Base
   def self.record_market_price
     cards = self.all
     cards.each do |card|
-      if card.pull_market_price != card.current_price
-        puts card.pull_market_price
-        card.current_price = card.pull_market_price
+      card_price = card.pull_market_price
+      Price.create(
+        price: card_price,
+        card_id: card.id
+      )
+      if card_price != card.current_price
+        puts card_price
+        card.current_price = card_price
         card.save
-        puts card.pull_market_price
+        puts card_price
       end
     end
   end
