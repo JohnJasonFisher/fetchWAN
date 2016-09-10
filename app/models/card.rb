@@ -45,6 +45,11 @@ class Card < ActiveRecord::Base
   def self.record_retail_price
     cards = self.all
     cards.each do |card|
+      price = Price.new(
+        price: card.pull_retail_price,
+        card_id: card.id
+      )
+      price.save
       if card.pull_retail_price != card.current_price
         card.current_price = card.pull_retail_price
         card.save
