@@ -42,14 +42,24 @@ class Card < ActiveRecord::Base
     price = price.split(';')[2][0..-1].to_f
   end
 
+  def test_market_price
+    price = Unirest.get("http://api.mtgowikiprice.com/api/card/price?sets=#{set}&cardNames=#{name}&api_key=#{ENV['API_KEY']}").body
+    price = price.split(';')[2][0..-1].to_f
+    price_entry = Price.new(
+      price: price,
+      card_id: id
+    )
+    price_entry.save
+  end
+
   def self.record_retail_price
     cards = self.all
     cards.each do |card|
-      price = Price.new(
-        price: card.pull_retail_price,
-        card_id: card.id
-      )
-      price.save
+      # price = Price.new(
+      #   price: card.pull_retail_price,
+      #   card_id: card.id
+      # )
+      # price.save
       if card.pull_retail_price != card.current_price
         card.current_price = card.pull_retail_price
         card.save
