@@ -57,22 +57,38 @@ class Card < ActiveRecord::Base
   #   end
   # end
 
-  def self.record_market_price
-    card_price = card.pull_market_price
+  def self.record_market_prices
     cards = self.all
-    cards.each do |card|
-      if card_price != card.current_price
-        puts card_price
-        card.current_price = card_price
-        card.save
-        puts card_price
-      end 
-    end
     usercards = CardUser.all
-    usercards.each do |usercard|
-      if usercard.desired_sell_price > card_price
-        Alert.alert_seller(usercard.user.phone_number)
+    cards.each do |card|
+      card_price = card.pull_market_price
+      usercards.each do |usercard|
+        card_price = card.pull_market_price
+        if usercard.desired_sell_price < card_price
+          Alert.alert_seller(usercard.user.phone_number)
+        end
+        if card_price != card.current_price
+          puts "PRICE CHANGE !!!!! #{card_price}"
+          card.current_price = card_price
+          card.save
+          puts card_price
+        end 
       end
     end
   end
+
+  # def self.record_market_price
+  #   card = self.first
+  #   usercard = CardUser.first
+  #   card_price = card.pull_market_price
+  #   if usercard.desired_sell_price < card_price
+  #     Alert.alert_seller(usercard.user.name, usercard.user.phone_number)
+  #   end
+  #   if card_price != card.current_price
+  #     puts "PRICE CHANGE !!!!! #{card_price}"
+  #     card.current_price = card_price
+  #     card.save
+  #     puts card_price
+  #   end 
+  # end
 end
