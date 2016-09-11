@@ -47,6 +47,7 @@ GEM
       debug_inspector (>= 0.0.1)
     builder (3.2.2)
     byebug (9.0.5)
+    chartkick (2.1.0)
     chronic (0.10.2)
     coercible (1.0.0)
       descendants_tracker (~> 0.0.1)
@@ -75,6 +76,8 @@ GEM
       faraday (>= 0.7.4, < 0.10)
     globalid (0.3.7)
       activesupport (>= 4.1.0)
+    groupdate (3.0.2)
+      activesupport (>= 3)
     i18n (0.7.0)
     ice_nine (0.11.2)
     jbuilder (2.6.0)
@@ -222,8 +225,10 @@ PLATFORMS
 DEPENDENCIES
   bcrypt (~> 3.1.7)
   byebug
+  chartkick
   coffee-rails (~> 4.1.0)
   dotenv-rails
+  groupdate
   jbuilder (~> 2.0)
   jquery-rails
   mtg_sdk

@@ -36,6 +36,10 @@ gem 'twilio-ruby'
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
 
+gem "chartkick"
+
+gem 'groupdate'
+
 # Use Unicorn as the app server
 # gem 'unicorn'
 

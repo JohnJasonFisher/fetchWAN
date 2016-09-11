@@ -2,17 +2,8 @@ class UsercardsController < ApplicationController
   before_action :authenticate_user
 
   def index
-    # legacy alert
-
-    # alert = Alert.new(
-    #   user_id: current_user.id,
-    #   title: 'busy title',
-    #   text: 'junk'
-    # )
-    # alert.alert_seller
-    # alert.save
-
     @card_users = current_user.card_users
+    @carduser = CardUser.first
     render "index.html.erb"
   end
   

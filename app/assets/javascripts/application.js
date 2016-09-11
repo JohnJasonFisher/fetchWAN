@@ -14,4 +14,6 @@
 //= require jquery_ujs
 //= require angular
 //= require app
+//= require Chart.bundle
+//= require chartkick
 //= require_tree .

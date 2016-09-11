@@ -3,3 +3,5 @@
 
 <h4>Your desired buy price: <%= @usercard.desired_buy_price %> </h4>
 <h4>Your desired sell price: <%= @usercard.desired_sell_price %> </h4>
+
+<%= line_chart Price.where(card_id: @card.id).pluck(:created_at, :price)%>
