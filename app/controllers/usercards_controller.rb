@@ -42,7 +42,6 @@ class UsercardsController < ApplicationController
   end
 
   def stats
-    @current_user = current_user
     render 'stats.html.erb'
   end
 end

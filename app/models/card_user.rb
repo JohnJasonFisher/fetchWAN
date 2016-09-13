@@ -3,23 +3,26 @@ class CardUser < ActiveRecord::Base
   belongs_to :user
 
   def total_value
-    quantity * card.price
+    quantity * card.current_price
   end
 
-  def self.total_user_collection_value(user_id)
-    owned_cards = CardUser.where(user_id: user_id)
+  def self.total_usercard_value(user_id)
+    @owned_cards = CardUser.where(user_id: user_id)
     value = 0
-    owned_cards.each do |owned_card|
+    @owned_cards.each do |owned_card|
       value += owned_card.total_value
     end
     value
   end
 
-  def self.most_expensive_card
-
+  def self.best_performing_card
   end
 
-  def self.fastest_growing_card
+  def self.fastest_growing_usercard(user_id)
+    @owned_cards = CardUser.where(user_id: user_id)
+    owned_cards.each do |owned_card|
+      
+    end
   end
 
   def self.fastest_dropping_card
