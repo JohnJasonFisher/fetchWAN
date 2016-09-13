@@ -3,7 +3,6 @@ class UsercardsController < ApplicationController
 
   def index
     @card_users = current_user.card_users
-    @carduser = CardUser.first
     render "index.html.erb"
   end
   
@@ -40,5 +39,10 @@ class UsercardsController < ApplicationController
     @card_user = CardUser.find_by(id: params[:id])
     @card_user.destroy
     redirect_to '/cards/portfolio'
+  end
+
+  def stats
+    @current_user = current_user
+    render 'stats.html.erb'
   end
 end

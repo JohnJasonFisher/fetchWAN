@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->
 <!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->
@@ -63,6 +61,11 @@
     <!--=== End Breadcrumbs ===-->
 
     <!--=== Content Part ===-->
+
+    <div ng-app="app">
+      <div ng-controller="usercardCtrl">
+
+      
     <div class="container content-sm portfolio-4-columns">
       <div class="row">
         <% @card_users.each do |user_card| %>
@@ -87,12 +90,11 @@
       </div>
     <li><a href="/usercards/add">Add a card to your collection!</a></li>
 
-    <div ng-app="app">
-      <div ng-controller="usercardCtrl">
+    
         {{ message }}
-      </div>
+     
+ </div>
     </div>
-
     </div><!--/container-->
     <!--=== End Content Part ===-->
 

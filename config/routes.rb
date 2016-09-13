@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
   get '/usercards' => 'usercards#index'
   get '/usercards/add' => 'usercards#new'
+  get '/usercards/stats' => 'usercards#stats'
   post '/usercards/add' => 'usercards#create'
+
   
   get '/cards/:id' => 'cards#show'
   delete '/cards/:id' => 'card_user#destroy'
