@@ -95,4 +95,26 @@ class Card < ActiveRecord::Base
   #     puts card_price
   #   end 
   # end
+
+  def growth_rate
+    # This returns all prices of one card in an array
+    # all_price = Price.where(card_id: id)
+    # all_market_prices = []
+    # all_price.each do |price|
+    #   all_market_prices << price.price
+    # end
+    # all_market_prices
+    original_card_price = Price.where(card_id: id).order(created_at: :asc).first.price
+    n = current_price - original_card_price
+    d = original_card_price
+    puts '*' * 30
+    puts "current_price: #{current_price}"
+    puts "original_card_price: #{original_card_price}"
+    puts '*' * 30
+    growth_rate = n / d
+  end
+
+  def self.growth_rate
+    
+  end
 end
