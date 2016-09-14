@@ -24,10 +24,10 @@ class Alert < ActiveRecord::Base
       :to => user_phone_number,
       :body => text
     )
-    Alert.create(
-      user_id: 
-      title: title,
-      text: text
-    )
+    # Alert.create(
+    #   user_id: 
+    #   title: title,
+    #   text: text
+    # )
   end
 end

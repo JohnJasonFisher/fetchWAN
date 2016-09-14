@@ -6,6 +6,15 @@ class CardUser < ActiveRecord::Base
     quantity * card.current_price
   end
 
+  def self.total_quantity(user_id)
+    @owned_cards = CardUser.where(user_id: user_id)
+    total_quantity = 0
+    @owned_cards.each do |owned_card|
+      total_quantity += owned_card.quantity
+    end
+    total_quantity
+  end
+
   def self.total_usercard_value(user_id)
     @owned_cards = CardUser.where(user_id: user_id)
     value = 0
@@ -36,5 +45,16 @@ class CardUser < ActiveRecord::Base
     p all_growth_rates
     growth_card = all_growth_rates.max[1]
     growth_card.name
+  end
+
+  def self.fastest_growing_usercard_card_image_url(user_id)
+    @owned_cards = CardUser.where(user_id: user_id)
+    all_growth_rates = []
+    @owned_cards.each do |owned_card|
+      all_growth_rates << [owned_card.card.growth_rate, owned_card.card]
+    end
+    p all_growth_rates
+    growth_card = all_growth_rates.max[1]
+    growth_card.image_url
   end
 end
