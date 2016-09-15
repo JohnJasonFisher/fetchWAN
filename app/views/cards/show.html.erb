@@ -1,8 +1,40 @@
-<%= image_tag @card.image_url %>
-<h3>Current Price: <%= @card.current_price %></h3>
+<div class="wrapper">
+  <!--=== Profile ===-->
+  <div class="container content profile">
+    <div class="row">
+      <!--Left Sidebar-->
+      <div class="col-md-3 md-margin-bottom-40">
+        <img class="img-responsive profile-img margin-bottom-20" src="<%= @card.image_url %>" alt="">
 
-<h4>Your desired buy price: <%= @usercard.desired_buy_price %> </h4>
-<h4>Your desired sell price: <%= @usercard.desired_sell_price %> </h4>
-<a href="url">Would you like to change your buy or sell price?</a>
+        <div class="panel-heading-v2 overflow-h">
+          <h2 class="heading-xs pull-left"><i class="fa fa-bar-chart-o"></i> Card Attributes</h2>
+        </div>
+        <h2 class="heading-xs">Card Name: <span class="pull-right"><%= @card.name %></span></h3>
+        <h3 class="heading-xs">Multiverse Id: <span class="pull-right"><%= @card.multiverse_id %></span></h3>
+        <h3 class="heading-xs">Set Name: <span class="pull-right"><%= @card.set_name %></span></h3>
+        <hr>
+        <h3 class="heading-xs">Current Price: <span class="pull-right"><%= @card.current_price %></span></h3>
+        <hr>
+        <h3 class="heading-xs">Your desired sell price: <span class="pull-right"><%= @usercard.desired_sell_price %></span></h3>
+        <h3 class="heading-xs">Your desired buy price:  <span class="pull-right"><%= @usercard.desired_buy_price %></span></h3>
 
-<%= line_chart Price.where(card_id: @card.id).pluck(:created_at, :price)%>
+        <hr>
+
+        <a href="url">Would you like to change your buy or sell price?</a>
+
+
+        <div class="margin-bottom-50"></div>
+      </div>
+      <!--End Left Sidebar-->
+
+      <!-- Profile Content -->
+      <div class="col-sm-6 sm-margin-bottom-20">
+        <%= line_chart Price.where(card_id: @card.id).pluck(:created_at, :price)%>
+      </div>
+      <!-- End Profile Content -->
+    </div><!--/end row-->
+  </div>
+  <!--=== End Profile ===-->
+
+
+</div><!--/wrapper-->
