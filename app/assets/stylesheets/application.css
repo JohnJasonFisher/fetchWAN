@@ -13,3 +13,20 @@
  *= require_tree .
  *= require_self
  */
+
+#background {
+  background-image: url("http://i.imgur.com/Dv8miTR.jpg");
+  background-size: cover;
+}
+
+.title {
+  h2 {
+    color: white;
+  }
+}
+
+.light_grey {
+  h2 {
+    color: #000;
+  }
+}

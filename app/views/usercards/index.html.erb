@@ -42,7 +42,6 @@
 </head>
 
 <body>
-  <div class="wrapper">
     <!--=== Header ===-->
     
     <!--=== End Header ===-->
@@ -65,33 +64,36 @@
 
       
     <div class="container content-sm portfolio-4-columns">
+    <% @card_users.each_slice(4) do |cardgroup| %>
       <div class="row">
-        <% @card_users.each do |user_card| %>
+        <% cardgroup.each do |user_card| %>
           <!-- repeat start -->
           <div class="col-md-3 col-sm-6">
-            <h2><%= user_card.card.name %></h2>
-            <div class="view view-tenth">
-              <%= image_tag user_card.card.image_url, class: "img-responsive", alt: "halp" %>
-              <!-- <img class="img-responsive" src="" alt="" /> -->
-              <div class="mask">
-                <h2><%= user_card.card.name %></h2>
-                <a href="/cards/<%= user_card.card.id %>" class="info">Read More</a>
-                <div>
-                  <h3><b>Price: <%= user_card.card.current_price %></b></h3>
-                </div>
-              </div>
-              <p>Quantity: <%= user_card.quantity %></p>
+            <div class="bg-light light_grey">
+              <h2><%= user_card.card.name %></h2>
             </div>
+              <div class="view view-tenth bg-light">
+                <%= image_tag user_card.card.image_url, class: "img-responsive", alt: "halp" %>
+                <!-- <img class="img-responsive" src="" alt="" /> -->
+                <div class="mask">
+                  <h2><%= user_card.card.name %></h2>
+                  <a href="/cards/<%= user_card.card.id %>" class="info">Read More</a>
+                  <div>
+                    <h3><b>Price: <%= user_card.card.current_price %></b></h3>
+                  </div>
+                </div>
+                <p>Quantity: <%= user_card.quantity %></p>
+              </div>  
           </div>
           <!-- repeat end -->
         <% end %>
       </div>    
- </div>
+      <% end %>
+    </div>
     </div>
     </div><!--/container-->
     <!--=== End Content Part ===-->
 
-  </div><!--/wrapper-->
 
   <!-- JS Global Compulsory -->
   <script type="text/javascript" src="/assets/plugins/jquery/jquery.min.js"></script>
@@ -116,5 +118,4 @@
   <script src="assets/plugins/html5shiv.js"></script>
   <script src="assets/plugins/placeholder-IE-fixes.js"></script>
   <![endif]-->
-</body>
-</html>
+</body

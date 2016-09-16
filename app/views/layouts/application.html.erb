@@ -4,9 +4,6 @@
 <!--[if !IE]><!--> <html lang="en"> <!--<![endif]-->
 <head>
     <title>MTG Fetch</title>
-      <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-      <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-      <%= csrf_meta_tags %>
     <!-- Meta -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -40,6 +37,9 @@
 
     <!-- CSS Customization -->
     <link rel="stylesheet" href="/assets/css/custom.css">
+      <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+      <%= csrf_meta_tags %>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
 </head>
 
 <body>
@@ -88,7 +88,9 @@
             </div><!--/navbar-collapse-->
         </div>
         <!--=== End Header ===-->
-        <%= yield %>
+        <div id="background">
+            <%= yield %>
+        </div>
       
         <!--=== Footer Version 1 ===-->
         <div class="footer-v1">
@@ -97,9 +99,9 @@
                     <div class="row">
                         <!-- About -->
                         <div class="col-md-3 md-margin-bottom-40">
-                            <a href="index.html"><img id="logo-footer" class="footer-logo" src="/assets/img/logo2-default.png" alt=""></a>
-                            <p>About Unify dolor sit amet, consectetur adipiscing elit. Maecenas eget nisl id libero tincidunt sodales.</p>
-                            <p>Duis eleifend fermentum ante ut aliquam. Cras mi risus, dignissim sed adipiscing ut, placerat non arcu.</p>
+                            <h2 class='title'><b>MTG Fetch</b></h2>
+                            <p>MTG Fetch is an automated tool for magic the gathering investors. Here, you can view and add cards to your portfollio and set desired buy and sell prices. This application will track and save prices. MTG fetch will send you alerts when the market price reaches your desired sell by buy price.</p>
+                            <p></p>
                         </div><!--/col-md-3-->
                         <!-- End About -->
 
@@ -129,11 +131,9 @@
                         <div class="col-md-3 md-margin-bottom-40">
                             <div class="headline"><h2>Useful Links</h2></div>
                             <ul class="list-unstyled link-list">
-                                <li><a href="#">About us</a><i class="fa fa-angle-right"></i></li>
-                                <li><a href="#">Portfolio</a><i class="fa fa-angle-right"></i></li>
-                                <li><a href="#">Latest jobs</a><i class="fa fa-angle-right"></i></li>
-                                <li><a href="#">Community</a><i class="fa fa-angle-right"></i></li>
-                                <li><a href="#">Contact us</a><i class="fa fa-angle-right"></i></li>
+                                <li><a href="https://www.mtgowikiprice.com/api#explanation">WikiPrice</a><i class="fa fa-angle-right"></i></li>
+                                <li><a href="http://www.tcgplayer.com/">TCG Player</a><i class="fa fa-angle-right"></i></li>
+                                <li><a href="http://magic.wizards.com/en/content/articles">Latest news</a><i class="fa fa-angle-right"></i></li>
                             </ul>
                         </div><!--/col-md-3-->
                         <!-- End Link List -->
@@ -142,11 +142,10 @@
                         <div class="col-md-3 map-img md-margin-bottom-40">
                             <div class="headline"><h2>Contact Us</h2></div>
                             <address class="md-margin-bottom-40">
-                                25, Lorem Lis Street, Orange <br />
-                                California, US <br />
-                                Phone: 800 123 3456 <br />
-                                Fax: 800 123 3456 <br />
-                                Email: <a href="mailto:info@anybiz.com" class="">info@anybiz.com</a>
+                                2021 N 19th Ave, Melrose Park <br />
+                                Illinois, US <br />
+                                Phone: 708 415 8094 <br />
+                                Email: <a href="jjfisher91@gmail.com" class="">jjfisher91@gmail.com</a>
                             </address>
                         </div><!--/col-md-3-->
                         <!-- End Address -->

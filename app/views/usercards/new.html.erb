@@ -1,16 +1,53 @@
-<h1>Add a new card to your collection!</h1>
+<h1>!</h1>
 
 <%= form_tag '/usercards/add', method: :post do %>
-  <%= label_tag :multiverse_id %>:
-  <%= text_field_tag :multiverse_id %>
-  <%= label_tag :quantity %>:
-  <%= text_field_tag :quantity %>
-  <%= label_tag :desired_sell_price %>:
-  <%= text_field_tag :desired_sell_price %>
-  <%= label_tag :desired_buy_price %>:
-  <%= text_field_tag :desired_buy_price %>
+ 
   <div>
     <%= hidden_field_tag :user_id, current_user.id %>
   </div>
-  <%= submit_tag "submit" %>
+  
+
+
+<!--=== Content Part ===-->
+  
+    <div class="container content">
+    <!-- <div class="funny-boxes funny-boxes-left-green rightmarge"> -->
+      <div class="row">
+        <div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2 funny-boxes funny-boxes-left-green rightmarge">
+          <form class="reg-page">
+            <div class="reg-header">
+              <h2>Add a new card to your collection</h2>
+            </div>
+
+            <label>Multiverse Id</label>
+            <%= text_field_tag :multiverse_id, @usercard.multiverse_id, {class: "form-control margin-bottom-20"} %>
+
+            <label>Desired Sell Price</label>
+            <%= text_field_tag :desired_sell_price, @usercard.desired_sell_price, {class: "form-control margin-bottom-20"} %>
+
+            <label>Desired Buy Price</label>
+            <%= text_field_tag :desired_buy_price, @usercard.desired_buy_price, {class: "form-control margin-bottom-20"} %>
+            <div class="row">
+              <div class="col-sm-6">
+                <label>Quantity</label>
+                <%= text_field_tag :quantity, @usercard.quantity, {class: "form-control margin-bottom-20"} %>
+                <!-- <input type="password" class="form-control margin-bottom-20"> -->
+              </div>
+            </div>
+
+            <hr>
+
+            <div class="row">
+              <div class="col-lg-6 text-right">
+                <%= button_tag "Add Card", class: "btn-u", type: "submit" %>
+                <!-- <button class="btn-u" type="submit">Add Card</button> -->
+              </div> 
+
+            </div>
+          </form>
+        </div>
+      <!-- </div> -->
+  </div>
+    </div><!--/container-->
+    <!--=== End Content Part ===-->
 <% end %>

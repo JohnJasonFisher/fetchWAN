@@ -7,6 +7,7 @@ class UsercardsController < ApplicationController
   end
   
   def new
+    @usercard = CardUser.new
     render 'new.html.erb'
   end
 
@@ -18,7 +19,9 @@ class UsercardsController < ApplicationController
       desired_buy_price: params[:desired_buy_price],
       user_id: params[:user_id]
     )
-    if card = Card.find_by(multiverse_id: params[:multiverse_id])
+    carduser.save
+    if Card.find_by(multiverse_id: params[:multiverse_id])
+      card == Card.find_by(multiverse_id: params[:multiverse_id])
       carduser.card_id = card.id
     else
       card = Card.new(multiverse_id: params[:multiverse_id])
@@ -28,6 +31,7 @@ class UsercardsController < ApplicationController
       card.image_url = card.show_image
       card.save
       carduser.card_id = card.id
+      card.save
       card.current_price = card.pull_market_price
       card.save
     end

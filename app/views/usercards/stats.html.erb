@@ -44,7 +44,7 @@
                 <div class="service-block-v3 service-block-blue">
                   <i class="icon-screen-desktop"></i>
                   <span class="service-heading">Total Collection Value</span>
-                  <span class="counter"><%= CardUser.total_usercard_value(current_user.id) %></span>
+                  <span class="counter">$<%= CardUser.total_usercard_value(current_user.id) %></span>
 
                   <div class="clearfix margin-bottom-10"></div>
 
@@ -71,7 +71,6 @@
           </div>
           <ul class="list-unstyled mCustomScrollbar margin-bottom-20" data-mcs-theme="minimal-dark">
             <li class="notification">
-              <i class="icon-custom icon-sm rounded-x icon-bg-red icon-line icon-envelope"></i>
               <div class="overflow-h">
                 <span><strong>Albert Heller</strong> has sent you email.</span>
                 <small>Two minutes ago</small>
