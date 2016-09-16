@@ -46,7 +46,8 @@ class UsercardsController < ApplicationController
   end
 
   def stats
-    @alerts = Alert.all
+    @alerts = Alert.where(user_id: current_user.id)
+    @alerts = @alerts.limit(3)
     render 'stats.html.erb'
   end
 end
