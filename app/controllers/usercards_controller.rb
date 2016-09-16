@@ -2,7 +2,7 @@ class UsercardsController < ApplicationController
   before_action :authenticate_user
 
   def index
-    @card_users = current_user.card_users
+    @card_users = current_user.card_users.order(:created_at)
     render "index.html.erb"
   end
   
@@ -31,7 +31,7 @@ class UsercardsController < ApplicationController
       card.image_url = card.show_image
       card.save
       carduser.card_id = card.id
-      card.save
+      carduser.save
       card.current_price = card.pull_market_price
       card.save
     end
@@ -46,6 +46,7 @@ class UsercardsController < ApplicationController
   end
 
   def stats
+    @alerts = Alert.all
     render 'stats.html.erb'
   end
 end

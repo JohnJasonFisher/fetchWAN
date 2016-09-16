@@ -68,9 +68,9 @@ class Card < ActiveRecord::Base
       card_price = card.pull_market_price
       usercards.each do |usercard|
         card_price = card.pull_market_price
-        # if usercard.desired_sell_price < card_price
-        #   Alert.alert_seller(usercard.user.phone_number)
-        # end
+        if card_price > usercard.desired_sell_price
+          Alert.alert_seller(usercard.user.phone_number, card.name)
+        end
         if card_price != card.current_price
           puts "PRICE CHANGE !!!!! #{card_price}"
           card.current_price = card_price
