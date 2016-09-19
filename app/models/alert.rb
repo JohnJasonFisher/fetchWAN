@@ -17,17 +17,17 @@ class Alert < ActiveRecord::Base
     @client = Twilio::REST::Client.new ENV['TWILIO_ACCOUNT_SID'], ENV['TWILIO_AUTH_TOKEN']
 
     title = "#{card_name} is over your sell price"
-    text = "Hello,your card's price has meet or exceded your desired sell price."
+    text = "Hello, #{card_name} price has meet or exceded your desired sell price."
 
     message = @client.account.messages.create(
       :from => @twilio_number,
       :to => user_phone_number,
       :body => text
     )
-    Alert.create(
-      user_id: user_id,
-      title: title,
-      text: text
-    )
+    # Alert.create(
+    #   user_id: user_id,
+    #   title: title,
+    #   text: text
+    # )
   end
 end
