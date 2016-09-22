@@ -21,7 +21,7 @@ class UsercardsController < ApplicationController
     )
     carduser.save
     if Card.find_by(multiverse_id: params[:multiverse_id])
-      card == Card.find_by(multiverse_id: params[:multiverse_id])
+      card = Card.find_by(multiverse_id: params[:multiverse_id])
       carduser.card_id = card.id
     else
       card = Card.new(multiverse_id: params[:multiverse_id])
