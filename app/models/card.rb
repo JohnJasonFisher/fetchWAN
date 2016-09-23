@@ -39,19 +39,23 @@ class Card < ActiveRecord::Base
   end
 
   def self.record_market_prices
-    cards = self.all
-    usercards = CardUser.all
+    cards = Card.all
     cards.each do |card|
       card_price = card.pull_market_price
       if card_price != card.current_price
         puts "PRICE CHANGE !!!!! #{card_price}"
         card.current_price = card_price
         card.save
+        usercards = CardUser.where(card_id: card.id)
         usercards.each do |usercard|
+          card_name = usercard.card.name
           if card_price > usercard.desired_sell_price
-            Alert.alert_seller(usercard.user_id, usercard.user.phone_number, card.name)
+            Alert.alert_seller(usercard.user_id, usercard.user.phone_number, card_name)
             puts 'MESSAGE SENT'
-          end
+          # elsif card_price < usercard.desired_buy_price
+          #   Alert.alert_buyer(usercard.user_id, usercard.user.phone_number, card_name)
+          #   puts 'MESSAGE SENT'
+          # end
         end
       end
     end
