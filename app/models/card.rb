@@ -15,7 +15,7 @@ class Card < ActiveRecord::Base
   def show_name
     name = data["card"]["name"]
   end
-
+  
   def show_set_name
     name = data["card"]["setName"]
   end
@@ -47,16 +47,6 @@ class Card < ActiveRecord::Base
         card.current_price = card_price
         card.save
         usercards = CardUser.where(card_id: card.id)
-        usercards.each do |usercard|
-          card_name = usercard.card.name
-          if card_price > usercard.desired_sell_price
-            Alert.alert_seller(usercard.user_id, usercard.user.phone_number, card_name)
-            puts 'MESSAGE SENT'
-          # elsif card_price < usercard.desired_buy_price
-          #   Alert.alert_buyer(usercard.user_id, usercard.user.phone_number, card_name)
-          #   puts 'MESSAGE SENT'
-          # end
-        end
       end
     end
     puts 'finished'
@@ -66,11 +56,6 @@ class Card < ActiveRecord::Base
     original_card_price = Price.where(card_id: id).order(created_at: :asc).first.price
     n = current_price - original_card_price
     d = original_card_price
-    puts '*' * 30
-    puts "current_price: #{current_price}"
-    puts "original_card_price: #{original_card_price}"
-    puts '*' * 30
     growth_rate = n / d
   end
-
 end
