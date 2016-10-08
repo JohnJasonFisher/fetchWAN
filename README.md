@@ -1,12 +1,21 @@
 # MTG Fetch
 
+/* NEWS
+This application has been launched as of October 9th 2016! To view my app just go to https://calm-atoll-54619.herokuapp.com/login and use the email admin@admin.com with the password 'password'.
+
+I'm currently migrating data from my local database into heroku's database. Currently only one price at one time is shown but after the migration, all prices I have collected will be shown.
+Also, right now the WikiPrice API is down, so some prices will be accurate only from October 6th. I have contacted the team over there and they said they are looking into the issue.
+*/
+
+
 MTG Fetch is a Ruby on Rails 4 application that I made during my time at the Actualize 
-programming bootcamp. The back end of this application was written in ruby and the front end was written in html, css and javascript.
+programming bootcamp. The back end of this application was written in ruby and the front end was written in html, css and javascript. Postgresql was used as the relational database to store card and pricing data.
 
 MTG Fetch automates the process of investing with three features.
-  -Collection manager
-  -Price histories
-  -SMS notifications
+
+-Collection manager
+-Price histories
+-SMS notifications
 
 The collection manager allows the user to see their entire Magic the Gathering card portfolio. They can see the current market price of their cards and how many of the cards they own. They can click on 'read more' for more information.
 
