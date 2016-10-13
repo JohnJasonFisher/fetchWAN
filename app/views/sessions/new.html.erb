@@ -10,7 +10,7 @@
   <%= submit_tag "Submit" %>
 <% end %>
 
-
+<body onload="myFunction()">
     <!--=== Content Part ===-->
     <div class="container content">
       <div class="row">
@@ -40,6 +40,12 @@
 
             <hr>
 
+            <script>
+            function myFunction() {
+                alert("Hello, John here, note that this sight is still a work in progress. You can log in using the above two boxes and not the fancy looking boxes below. Also, I am still migrating my data to Heroku, so not much data here yet. Check again, this should be fixed by the end of the weekend.");
+            }
+            </script>
+
             <h4>No Account?</h4>
             <p>no worries, <a class="color-green" href="/signup">click here</a> to sign up.</p>
           </form>
@@ -47,8 +53,7 @@
       </div><!--/row-->
     </div><!--/container-->
     <!--=== End Content Part ===-->
-
-  </div><!--/wrapper-->
+</body>
 
   <!-- JS Global Compulsory -->
   <script type="text/javascript" src="assets/plugins/jquery/jquery.min.js"></script>
