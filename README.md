@@ -1,10 +1,14 @@
 # MTG Fetch
 
-/* NEWS
+
 This application has been launched as of October 9th 2016! To view my app just go to https://calm-atoll-54619.herokuapp.com/login and use the email admin@admin.com with the password 'password'.
 
-I'm currently migrating data from my local database into heroku's database. Currently only one price at one time is shown but after the migration, all prices I have collected will be shown.
-Also, right now the WikiPrice API is down, so some prices will be accurate only from October 6th. I have contacted the team over there and they said they are looking into the issue.
+/* NEWS
+October 19th 2016
+
+- Adding a new card to a collection leads to error. Will be corrected soon.
+- API is online again.
+- Still working on migrating data.
 */
 
 
