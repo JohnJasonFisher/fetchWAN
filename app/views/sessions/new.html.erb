@@ -1,7 +1,7 @@
 <%= form_tag '/login', method: :post do %>
   <div>
     <%= label_tag :email %>
-    <%= text_field_tag :email %>
+    <%= text_field_tag :email, nil, class: "form-control" %>
   </div>
   <div>
     <%= label_tag :password %>
@@ -19,14 +19,16 @@
             <div class="reg-header">
               <h2>Login to your account</h2>
             </div>
+
+
             <form action="/login" method="post">
             <div class="input-group margin-bottom-20">
               <span class="input-group-addon"><i class="fa fa-user"></i></span>
-              <input type="text" placeholder="Username" class="form-control"> <% :email %>
+              <input type="text" name="email" placeholder="Username" class="form-control"> 
             </div>
             <div class="input-group margin-bottom-20">
               <span class="input-group-addon"><i class="fa fa-lock"></i></span>
-              <input type="password" placeholder="Password" class="form-control"> <% :password %>
+              <input type="password" name="password" placeholder="Password" class="form-control">
             </div>
             
 
@@ -39,11 +41,13 @@
               </div>
             </div>
             </form>
+
+
             <hr>
 
             <script>
             function myFunction() {
-              alert("Hello, John here, note that this sight is still a work in progress. You can log in using the two boxes in the top left hand corner using admin@admin.com and password. The Price API is working! Schduler is still a work in progress. Lastly, there is an issue with adding a new card to a collection. When adding a new card, an error screen will load followed by two cards being added to a collection. This bug is being currently being examined.");
+              alert("Hello, John here. It's the weekend and that mean I have time to polish this web application! Currently I'm cleaning up the login screen. For now log in by using the ugly boxes above using admin@admin.com and password. More updates will come as I complete more tasks.");
             }
             </script>
 
