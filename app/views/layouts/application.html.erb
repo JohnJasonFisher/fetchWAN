@@ -68,12 +68,10 @@
             <div class="collapse navbar-collapse mega-menu navbar-responsive-collapse">
                 <div class="container">
                     <ul class="nav navbar-nav">
-                        <!-- Home -->
-                        <!-- End Home -->
 
-                        <li><a href="/usercards/stats">Stats</a></li>
                         <!-- Pages -->
                         <% if current_user %>
+                            <li><a href="/usercards/stats">Stats</a></li>
                             <li><a href="/usercards"><%= current_user.name %></a></li>
                             <li class="topbar-devider"></li>
                             <li><a href="/logout">Log out</a></li>
