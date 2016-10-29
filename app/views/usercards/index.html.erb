@@ -80,7 +80,8 @@
                   </div>
                 </div>
                 <p>Quantity: <%= user_card.quantity %></p>
-              </div>  
+              </div>
+            <%= link_to "Delete UserCard", "/usercards/#{user_card.id}", method: :delete %>
           </div>
           <!-- repeat end -->
         <% end %>

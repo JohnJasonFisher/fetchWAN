@@ -1,8 +1,10 @@
 Rails.application.routes.draw do
+
   get '/usercards' => 'usercards#index'
   get '/usercards/add' => 'usercards#new'
   get '/usercards/stats' => 'usercards#stats'
   post '/usercards/add' => 'usercards#create'
+  delete '/usercards/:id' => 'usercards#destroy'
 
   
   get '/cards/:id' => 'cards#show'

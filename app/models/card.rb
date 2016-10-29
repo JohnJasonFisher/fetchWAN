@@ -30,6 +30,11 @@ class Card < ActiveRecord::Base
 
   def pull_market_price
     price = Unirest.get("http://api.mtgowikiprice.com/api/card/price?sets=#{set}&cardNames=#{name}&api_key=#{ENV['API_KEY']}").body
+    p "******************"
+    p "******************"
+    p price
+    p "******************"
+    p "******************"
     price = price.split(';')[2][0..-1].to_f
     Price.create(
       price: price,
@@ -37,6 +42,7 @@ class Card < ActiveRecord::Base
     )
     price
   end
+
 
   def self.record_market_prices
     cards = Card.all

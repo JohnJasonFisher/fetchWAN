@@ -1,5 +1,3 @@
-<h1>!</h1>
-
 <%= form_tag '/usercards/add', method: :post do %>
  
   <div>
@@ -31,7 +29,6 @@
               <div class="col-sm-6">
                 <label>Quantity</label>
                 <%= text_field_tag :quantity, @usercard.quantity, {class: "form-control margin-bottom-20"} %>
-                <!-- <input type="password" class="form-control margin-bottom-20"> -->
               </div>
             </div>
 

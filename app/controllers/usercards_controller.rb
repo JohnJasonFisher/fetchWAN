@@ -42,7 +42,7 @@ class UsercardsController < ApplicationController
   def destroy
     @card_user = CardUser.find_by(id: params[:id])
     @card_user.destroy
-    redirect_to '/cards/portfolio'
+    redirect_to '/usercards'
   end
 
   def stats
