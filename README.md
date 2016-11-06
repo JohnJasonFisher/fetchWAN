@@ -4,11 +4,11 @@
 This application has been launched as of October 9th 2016! To view my app just go to https://calm-atoll-54619.herokuapp.com/login and use the email admin@admin.com with the password 'password'.
 
 /* NEWS
-October 19th 2016
+November 6th 2016
 
-- Adding a new card to a collection leads to error. Will be corrected soon.
-- API is online again.
-- Still working on migrating data.
+-Intergrating and Testing angular
+-Moving delete button besides card name in index page
+-Renaming collections page
 */
 
 
