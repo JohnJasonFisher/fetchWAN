@@ -4,6 +4,8 @@ Rails.application.routes.draw do
   get '/usercards/add' => 'usercards#new'
   get '/usercards/stats' => 'usercards#stats'
   post '/usercards/add' => 'usercards#create'
+  get '/usercards/:card_id/edit' => 'usercards#edit'
+  patch '/usercards/:id' => 'usercards#update'
   delete '/usercards/:id' => 'usercards#destroy'
 
   

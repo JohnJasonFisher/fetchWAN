@@ -23,7 +23,7 @@
           <h3 class="heading-xs">Your desired sell price: <span class="pull-right">$<%= @usercard.desired_sell_price %></span></h3>
           <h3 class="heading-xs">Your desired buy price:  <span class="pull-right">$<%= @usercard.desired_buy_price %></span></h3>
           <hr>
-          <a href="url">Would you like to change your buy or sell price?</a>
+          <a href="/usercards/<%= @card.id %>/edit">Would you like to change your buy or sell price?</a>
         </div>
       </div>
 

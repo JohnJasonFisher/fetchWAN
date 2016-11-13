@@ -43,6 +43,21 @@ class UsercardsController < ApplicationController
     end
   end
 
+  def update
+    @usercard = CardUser.find(params[:id])
+    @usercard.update(
+      quantity: params[:quantity],
+      desired_sell_price: params[:desired_sell_price],
+      desired_buy_price: params[:desired_buy_price]
+    )
+    @usercard.save
+    redirect_to "/cards/#{@usercard.card_id}"
+  end
+
+  def edit
+    @usercard = CardUser.find_by(card_id: params[:card_id])
+  end
+
   def destroy
     @card_user = CardUser.find_by(id: params[:id])
     @card_user.destroy
