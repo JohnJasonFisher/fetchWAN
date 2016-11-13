@@ -1,4 +1,7 @@
 class CardUser < ActiveRecord::Base
+  validates :multiverse_id, presence: true
+  validates :multiverse_id, :numericality => {:only_integer => true}
+
   belongs_to :card
   belongs_to :user
 

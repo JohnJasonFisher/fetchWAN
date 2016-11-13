@@ -19,24 +19,28 @@ class UsercardsController < ApplicationController
       desired_buy_price: params[:desired_buy_price],
       user_id: params[:user_id]
     )
-    carduser.save
-    if Card.find_by(multiverse_id: params[:multiverse_id])
-      card = Card.find_by(multiverse_id: params[:multiverse_id])
-      carduser.card_id = card.id
-    else
-      card = Card.new(multiverse_id: params[:multiverse_id])
-      card.name = card.show_name
-      card.set_name = card.show_set_name
-      card.set = card.show_set
-      card.image_url = card.show_image
-      card.save
-      carduser.card_id = card.id
+    if carduser.save
+      if Card.find_by(multiverse_id: params[:multiverse_id])
+        card = Card.find_by(multiverse_id: params[:multiverse_id])
+        carduser.card_id = card.id
+      else
+        card = Card.new(multiverse_id: params[:multiverse_id])
+        card.name = card.show_name
+        card.set_name = card.show_set_name
+        card.set = card.show_set
+        card.image_url = card.show_image
+        card.save
+        carduser.card_id = card.id
+        carduser.save
+        card.current_price = card.pull_market_price
+        card.save
+      end
       carduser.save
-      card.current_price = card.pull_market_price
-      card.save
+      redirect_to '/usercards'
+    else
+      flash[:success]
+      redirect_to '/usercards/add'
     end
-    carduser.save
-    redirect_to '/usercards'
   end
 
   def destroy
