@@ -67,7 +67,9 @@
           <!-- repeat start -->
           <div class="col-md-3 col-sm-6">
             <div class="bg-light light_grey">
-              <h2><%= user_card.card.name %></h2>
+              <h2><%= user_card.card.name %>
+                <%= link_to "", "/usercards/#{user_card.id}", method: :delete, class: "icon-custom rounded-2x fa fa-trash-o pull-right" %>
+              </h2>
             </div>
               <div class="view view-tenth bg-light">
                 <%= image_tag user_card.card.image_url, class: "img-responsive", alt: "halp" %>
@@ -81,7 +83,7 @@
                 </div>
                 <p>Quantity: <%= user_card.quantity %></p>
               </div>
-            <%= link_to "Delete UserCard", "/usercards/#{user_card.id}", method: :delete %>
+            
           </div>
           <!-- repeat end -->
         <% end %>
