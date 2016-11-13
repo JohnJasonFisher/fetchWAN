@@ -38,6 +38,9 @@ class Card < ActiveRecord::Base
     p price
     p "******************"
     p "******************"
+    if '[]'
+      return puts "error"
+    end
     price = price.split(';')[2][0..-1].to_f
     Price.create(
       price: price,
