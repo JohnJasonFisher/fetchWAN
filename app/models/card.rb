@@ -38,9 +38,6 @@ class Card < ActiveRecord::Base
     p price
     p "******************"
     p "******************"
-    if '[]'
-      return puts "error"
-    end
     price = price.split(';')[2][0..-1].to_f
     Price.create(
       price: price,
@@ -48,7 +45,6 @@ class Card < ActiveRecord::Base
     )
     price
   end
-
 
   def self.record_market_prices
     cards = Card.all
