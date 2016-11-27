@@ -5,7 +5,7 @@ class UsercardsController < ApplicationController
     @card_users = current_user.card_users.order(:created_at)
     render "index.html.erb"
   end
-  
+
   def new
     @usercard = CardUser.new
     render 'new.html.erb'
@@ -17,7 +17,8 @@ class UsercardsController < ApplicationController
       quantity: params[:quantity],
       desired_sell_price: params[:desired_sell_price],
       desired_buy_price: params[:desired_buy_price],
-      user_id: params[:user_id]
+      user_id: params[:user_id],
+      card_name: params[:card_name]
     )
     if carduser.save
       if Card.find_by(multiverse_id: params[:multiverse_id])

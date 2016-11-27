@@ -10,6 +10,10 @@ class Card < ActiveRecord::Base
     current_price
   end
 
+  def find_multiverse_id(card_name)
+    Unirest.get("https://api.magicthegathering.io/v1/cards/#{multiverse_id}").body
+  end
+
   def data
     @data ||= Unirest.get("https://api.magicthegathering.io/v1/cards/#{multiverse_id}").body
     @data
