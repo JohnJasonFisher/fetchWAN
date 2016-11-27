@@ -27,11 +27,10 @@
         </div>
       </div>
 
-
-
       <div class="funny-boxes funny-boxes-left-orange botmarge rightmarge">
-        <%= line_chart Price.where(card_id: @card.id).pluck(:created_at, :price)%>
+        <%= line_chart Price.where(card_id: @card.id).pluck(:created_at, :price), width: "500px", height: "300px"%>
       </div>
+
     </div>
     <!-- End Profile Content -->
   </div><!--/end row-->
