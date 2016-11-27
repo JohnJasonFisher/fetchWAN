@@ -1,9 +1,9 @@
 class CardUser < ActiveRecord::Base
-  validates :multiverse_id, presence: true
-  validates :multiverse_id, :numericality => {:only_integer => true}
-
   belongs_to :card
   belongs_to :user
+
+  validates :multiverse_id, presence: true
+  validates :multiverse_id, :numericality => {:only_integer => true}
 
   def total_value
     quantity * card.current_price

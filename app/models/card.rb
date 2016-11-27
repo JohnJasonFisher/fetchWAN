@@ -1,10 +1,10 @@
 class Card < ActiveRecord::Base
-  validates :multiverse_id, presence: true
-  validates :multiverse_id, :numericality => {:only_integer => true}
-
   has_many :card_users
   has_many :users, through: :card_users
   has_many :prices
+
+  validates :multiverse_id, presence: true
+  validates :multiverse_id, :numericality => {:only_integer => true}, message: 'must be a number'
 
   def price
     current_price

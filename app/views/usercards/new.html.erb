@@ -1,13 +1,11 @@
 <%= form_tag '/usercards/add', method: :post do %>
- 
+
   <div>
     <%= hidden_field_tag :user_id, current_user.id %>
   </div>
-  
-
 
 <!--=== Content Part ===-->
-  
+
     <div class="container content">
     <!-- <div class="funny-boxes funny-boxes-left-green rightmarge"> -->
       <div class="row">
@@ -38,7 +36,7 @@
               <div class="col-lg-6 text-right">
                 <%= button_tag "Add Card", class: "btn-u", type: "submit" %>
                 <!-- <button class="btn-u" type="submit">Add Card</button> -->
-              </div> 
+              </div>
 
             </div>
           </form>
