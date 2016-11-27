@@ -4,7 +4,7 @@ class Card < ActiveRecord::Base
   has_many :prices
 
   validates :multiverse_id, presence: true
-  validates :multiverse_id, :numericality => {:only_integer => true}, message: 'must be a number'
+  # validates :multiverse_id, :numericality => {:only_integer => true}, message: 'must be a number'
 
   def price
     current_price
@@ -16,19 +16,19 @@ class Card < ActiveRecord::Base
   end
 
   def show_name
-    name = data["card"]["name"]
+    data["card"]["name"]
   end
-  
+
   def show_set_name
-    name = data["card"]["setName"]
+    data["card"]["setName"]
   end
 
   def show_set
-    name = data["card"]["set"]
+    data["card"]["set"]
   end
 
   def show_image
-    image = data["card"]["imageUrl"]
+    data["card"]["imageUrl"]
   end
 
   def pull_market_price
@@ -54,7 +54,7 @@ class Card < ActiveRecord::Base
         puts "PRICE CHANGE !!!!! #{card_price}"
         card.current_price = card_price
         card.save
-        usercards = CardUser.where(card_id: card.id)
+        CardUser.where(card_id: card.id)
       end
     end
     puts 'finished'
@@ -64,6 +64,6 @@ class Card < ActiveRecord::Base
     original_card_price = Price.where(card_id: id).order(created_at: :asc).first.price
     n = current_price - original_card_price
     d = original_card_price
-    growth_rate = n / d
+    n / d
   end
 end
