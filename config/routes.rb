@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  get '' => 'sessions#new'
   get '/usercards' => 'usercards#index'
   get '/usercards/add' => 'usercards#new'
   get '/usercards/stats' => 'usercards#stats'
@@ -8,7 +9,7 @@ Rails.application.routes.draw do
   patch '/usercards/:id' => 'usercards#update'
   delete '/usercards/:id' => 'usercards#destroy'
 
-  
+
   get '/cards/:id' => 'cards#show'
   delete '/cards/:id' => 'card_user#destroy'
 
