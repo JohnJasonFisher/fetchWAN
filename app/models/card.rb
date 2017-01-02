@@ -10,6 +10,10 @@ class Card < ActiveRecord::Base
     current_price
   end
 
+  def find_multiverse_id(card_name)
+    Unirest.get("https://api.magicthegathering.io/v1/cards/#{multiverse_id}").body
+  end
+
   def data
     @data ||= Unirest.get("https://api.magicthegathering.io/v1/cards/#{multiverse_id}").body
     @data
@@ -62,8 +66,12 @@ class Card < ActiveRecord::Base
 
   def growth_rate
     original_card_price = Price.where(card_id: id).order(created_at: :asc).first.price
+    p original_card_price
     n = current_price - original_card_price
+    p n
     d = original_card_price
+    p d
+    p n / d
     n / d
   end
 end

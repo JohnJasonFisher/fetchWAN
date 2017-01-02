@@ -1,18 +1,16 @@
 # MTG Fetch
 
 
-This application has been launched as of October 9th 2016! To view my app just go to https://calm-atoll-54619.herokuapp.com/login and use the email admin@admin.com with the password 'password'.
+This application has been launched as of October 9th 2016! To view my app just go to https://mtgopricefetch.herokuapp.com/ and use the email guest@guest.com with the password 'password'.
 
 /* NEWS
-November 6th 2016
+January 1st 2017
 
--Intergrating and Testing angular
--Moving delete button besides card name in index page
--Renaming collections page
+No news for now. Look for an update January 9th.
 */
 
 
-MTG Fetch is a Ruby on Rails 4 application that I made during my time at the Actualize 
+MTG Fetch is a Ruby on Rails 4 application that I made during my time at the Actualize
 programming bootcamp. The back end of this application was written in ruby and the front end was written in html, css and javascript. Postgresql was used as the relational database to store card and pricing data.
 
 MTG Fetch automates the process of investing with three features.
