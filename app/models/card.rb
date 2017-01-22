@@ -37,12 +37,9 @@ class Card < ActiveRecord::Base
 
   def pull_market_price
     price = Unirest.get("http://api.mtgowikiprice.com/api/card/price?sets=#{set}&cardNames=#{name}&api_key=#{ENV['API_KEY']}").body
-    p "******************"
     p name
     p price
-    p "******************"
-    p "******************"
-    price = price.split(';')[2][0..-1].to_f
+    price = price.split(';')[2][0..-2].to_f
     Price.create(
       price: price,
       card_id: id
@@ -56,12 +53,15 @@ class Card < ActiveRecord::Base
       card_price = card.pull_market_price
       if card_price != card.current_price
         puts "PRICE CHANGE !!!!! #{card_price}"
+        # I think there is something wrong here
         card.current_price = card_price
         card.save
         CardUser.where(card_id: card.id)
+      else
+        puts "No Price Change"
       end
     end
-    puts 'finished'
+     return puts 'finished'
   end
 
   def growth_rate
