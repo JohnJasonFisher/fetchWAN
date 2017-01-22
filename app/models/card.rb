@@ -38,7 +38,7 @@ class Card < ActiveRecord::Base
   def pull_market_price
     price = Unirest.get("http://api.mtgowikiprice.com/api/card/price?sets=#{set}&cardNames=#{name}&api_key=#{ENV['API_KEY']}").body
     p "******************"
-    p "******************"
+    p name
     p price
     p "******************"
     p "******************"
