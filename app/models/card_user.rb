@@ -36,7 +36,7 @@ class CardUser < ActiveRecord::Base
     p all_growth_rates
     growth_rate = all_growth_rates.max[0]
     growth_rate = growth_rate * 100
-    growth_rate.to_s[0..3].delete "."
+    growth_rate.to_s[0..2].delete "."
   end
 
   def self.fastest_growing_usercard_card_name(user_id)
