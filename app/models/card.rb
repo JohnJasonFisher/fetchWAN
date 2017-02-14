@@ -70,4 +70,9 @@ class Card < ActiveRecord::Base
     d = original_card_price
     n / d
   end
+
+  def clean_growth_rate
+    clean_growth_rate = growth_rate * 100
+    clean_growth_rate.to_s[0..2].delete "."
+  end
 end
