@@ -40,7 +40,7 @@
 
 <body>
     <!--=== Header ===-->
-    
+
     <!--=== End Header ===-->
 
     <!--=== Breadcrumbs ===-->
@@ -55,11 +55,6 @@
     <!--=== End Breadcrumbs ===-->
 
     <!--=== Content Part ===-->
-
-    <div ng-app="app">
-      <div ng-controller="usercardCtrl">
-
-      
     <div class="container content-sm portfolio-4-columns">
     <% @card_users.each_slice(4) do |cardgroup| %>
       <div class="row">
@@ -83,15 +78,14 @@
                 </div>
                 <p>Quantity: <%= user_card.quantity %></p>
               </div>
-            
+
           </div>
           <!-- repeat end -->
         <% end %>
-      </div>    
+      </div>
       <% end %>
     </div>
-    </div>
-    </div><!--/container-->
+<!--/container-->
     <!--=== End Content Part ===-->
 
 
