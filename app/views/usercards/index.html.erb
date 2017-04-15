@@ -63,7 +63,7 @@
           <div class="col-md-3 col-sm-6">
             <div class="bg-light light_grey">
               <h2><%= user_card.card.name %>
-                <%= link_to "", "/usercards/#{user_card.id}", method: :delete, class: "icon-custom rounded-2x fa fa-trash-o pull-right" %>
+                <%= link_to "", "/usercards/#{user_card.id}", method: :delete, data: {confirm: 'Are you sure?'}, class: "icon-custom rounded-2x fa fa-trash-o pull-right" %>
               </h2>
             </div>
               <div class="view view-tenth bg-light">
@@ -106,6 +106,12 @@
       App.init();
       StyleSwitcher.initStyleSwitcher();
     });
+    function areYouSure() {
+      var result = confirm("Want to delete?");
+      if (result) {
+
+      }
+    }
   </script>
   <!--[if lt IE 9]>
   <script src="assets/plugins/respond.js"></script>
