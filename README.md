@@ -3,13 +3,6 @@
 
 This application has been launched as of October 9th 2016! To view my app just go to https://mtgopricefetch.herokuapp.com/ and use the email guest@guest.com with the password 'password'.
 
-/* NEWS
-January 1st 2017
-
-No news for now. Look for an update January 9th.
-*/
-
-
 MTG Fetch is a Ruby on Rails 4 application that I made during my time at the Actualize
 programming bootcamp. The back end of this application was written in ruby and the front end was written in html, css and javascript. Postgresql was used as the relational database to store card and pricing data.
 
