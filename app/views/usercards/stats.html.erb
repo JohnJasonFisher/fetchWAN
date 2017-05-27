@@ -18,7 +18,7 @@
             <div class="row margin-bottom-10">
               <div class="col-sm-6 sm-margin-bottom-20">
                 <div class="service-block-v3 service-block-u">
-                  <i class="icon-users"></i>
+                  <i class="icon-graph"></i>
                   <span class="service-heading">Highest Growing Card You Own</span>
                   <span class="counter"> <%= CardUser.fastest_growing_usercard_card_name(current_user.id) %> </span>
 
@@ -44,7 +44,7 @@
 
               <div class="col-sm-6">
                 <div class="service-block-v3 service-block-blue">
-                  <i class="icon-screen-desktop"></i>
+                  <i class="icon-folder"></i>
                   <span class="service-heading">Total Collection Value</span>
                   <span class="counter">$<%= CardUser.total_usercard_value(current_user.id) %></span>
 
