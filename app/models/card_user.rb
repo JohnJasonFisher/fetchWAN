@@ -34,6 +34,9 @@ class CardUser < ActiveRecord::Base
       all_growth_rates << [owned_card.card.growth_rate, owned_card.card]
     end
     p all_growth_rates
+    if all_growth_rates.empty?
+      return "0"
+    end
     growth_rate = all_growth_rates.max[0]
     growth_rate = growth_rate * 100
     growth_rate.to_s[0..2].delete "."
@@ -46,6 +49,9 @@ class CardUser < ActiveRecord::Base
       all_growth_rates << [owned_card.card.growth_rate, owned_card.card]
     end
     p all_growth_rates
+    if all_growth_rates.empty?
+      return "You own no cards"
+    end
     growth_card = all_growth_rates.max[1]
     growth_card.name
   end
@@ -57,6 +63,9 @@ class CardUser < ActiveRecord::Base
       all_growth_rates << [owned_card.card.growth_rate, owned_card.card]
     end
     p all_growth_rates
+    if all_growth_rates.empty?
+      return "You own no cards"
+    end
     growth_card = all_growth_rates.max[1]
     growth_card.image_url
   end
