@@ -50,7 +50,7 @@ class CardUser < ActiveRecord::Base
     end
     p all_growth_rates
     if all_growth_rates.empty?
-      return "You own no cards"
+      return "You Have No Cards"
     end
     growth_card = all_growth_rates.max[1]
     growth_card.name
@@ -64,7 +64,7 @@ class CardUser < ActiveRecord::Base
     end
     p all_growth_rates
     if all_growth_rates.empty?
-      return "You own no cards"
+      return "You Have No Cards"
     end
     growth_card = all_growth_rates.max[1]
     growth_card.image_url
