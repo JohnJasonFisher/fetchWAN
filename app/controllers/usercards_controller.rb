@@ -11,6 +11,9 @@ class UsercardsController < ApplicationController
     render 'new.html.erb'
   end
 
+  def show
+  end
+
   def create
     carduser = CardUser.new(
       multiverse_id: params[:multiverse_id],
