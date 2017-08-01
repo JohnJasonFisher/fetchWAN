@@ -4,14 +4,6 @@ Rails.application.routes.draw do
   # get '' => 'sessions#new'
 
   resources :usercards
-  # get '/usercards' => 'usercards#index'
-  # change add to new?
-  # get '/usercards/add' => 'usercards#new'
-  # post '/usercards/add' => 'usercards#create'
-  # get '/usercards/:card_id/edit' => 'usercards#edit'
-  # patch '/usercards/:id' => 'usercards#update'
-  # delete '/usercards/:id' => 'usercards#destroy'
-
   get '/usercards/stats' => 'usercards#stats'
 
   get '/cards/:id' => 'cards#show'
