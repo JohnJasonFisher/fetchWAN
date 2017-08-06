@@ -1,4 +1,4 @@
-<body onload="myFunction()">
+<body>
     <!--=== Content Part ===-->
     <div class="container content">
       <div class="row">
@@ -27,23 +27,15 @@
 
 
             <div class="row">
-              <div class="col-md-6 checkbox">
-              </div>
-              <div class="col-md-6">
                 <%= submit_tag "Login", class: "btn-u pull-right" %>
-              </div>
+              <% end %>
+              <%= form_tag '/login', method: :post do %>
+                <%= text_field_tag :email, "guest@guest.com", class: "form-control", style: "display:none;" %>
+                <%= password_field_tag :password, "password", class: "form-control", style: "display:none;" %>
+                <%= submit_tag "Login As Guest", class: "btn-u btn-u-dark pull-right" %>
+                <% end %>
             </div>
-            <% end %>
-
-
             <hr>
-
-            <script>
-            function myFunction() {
-              alert("Hello, John here. If you want to just look around use guest@guest.com with the password 'password'. Currently, I'm working on replaceing the current graphs to make them more dynamic.");
-            }
-            </script>
-
             <h4>No Account?</h4>
             <p>no worries, <a class="color-green" href="/signup">click here</a> to sign up.</p>
           </div>
