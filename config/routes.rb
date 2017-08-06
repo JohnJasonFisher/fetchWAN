@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
 
   root to: 'sessions#new'
-  # get '' => 'sessions#new'
 
   resources :usercards
   get '/usercards/stats' => 'usercards#stats'

@@ -12,6 +12,7 @@ class UsercardsController < ApplicationController
   end
 
   def show
+    render 'stats.html.erb'
   end
 
   def create
@@ -73,4 +74,5 @@ class UsercardsController < ApplicationController
     # @alerts = @alerts.limit(3)
     render 'stats.html.erb'
   end
+
 end
