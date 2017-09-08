@@ -52,27 +52,20 @@ class Card < ActiveRecord::Base
     cards.each do |card|
       card_price = card.pull_market_price
       if card_price != card.current_price
-        puts "PRICE CHANGE !!!!! #{card_price}"
-        # I think there is something wrong here
         card.current_price = card_price
         card.save
-        CardUser.where(card_id: card.id)
-      else
-        puts "No Price Change"
       end
     end
-     return puts 'finished'
   end
 
   def growth_rate
-    original_card_price = Price.where(card_id: id).order(created_at: :asc).first.price
+    original_card_price = Price.order(created_at: :asc).first.price
     n = current_price - original_card_price
     d = original_card_price
     n / d
   end
 
-  def clean_growth_rate
-    clean_growth_rate = growth_rate * 100
-    clean_growth_rate.to_s[0..2].delete "."
+  def two_decimal_growth_rate
+    two_decimal_growth_rate = (growth_rate * 100).to_s[0..2].delete(".")
   end
 end
