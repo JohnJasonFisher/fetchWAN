@@ -65,7 +65,7 @@ class Card < ActiveRecord::Base
   end
 
   def growth_rate
-    original_card_price = Price.where(card_id: id).order(created_at: :asc).first.price
+    original_card_price = Price.order(created_at: :asc).first.price
     n = current_price - original_card_price
     d = original_card_price
     n / d
