@@ -17,5 +17,5 @@ Price.create!([
   {card_id: 4, price: "2.75"}
 ])
 User.create!([
-  {email: "admin@admin.com", password_digest: "$2a$10$kaxeECC.wYBrvZPqV24Mnu4rQd8OayyuNwrL5kwbDPYaC3ky6RnTC", name: "admin", phone_number: nil}
+  {email: "user@email.com", password_digest: "$2a$10$kaxeECC.wYBrvZPqV24Mnu4rQd8OayyuNwrL5kwbDPYaC3ky6RnTC", name: "user", phone_number: nil}
 ])
